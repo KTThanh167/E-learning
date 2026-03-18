@@ -2,7 +2,11 @@
 const props = defineProps({
   benefits: Array,
   buttonType: String,
-  highlight: Boolean,
+  highlight: {
+    type: Boolean,
+    default: false,
+    required: false,
+  },
 })
 </script>
 
