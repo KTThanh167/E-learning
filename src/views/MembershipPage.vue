@@ -114,7 +114,8 @@ const teachers = [
           </MembershipContent1Card>
           <!-- Card 2 -->
           <MembershipContent1Card
-            highlight=""
+            :highlight="true"
+            abc=""
             button-type="primary"
             :benefits="[
               { icon: iconIndividual, text: 'Components-driven system' },
@@ -181,13 +182,11 @@ const teachers = [
             <MembershipContent3
               :index="index"
               @showDesc="handleShowDesc"
-              :coaching="[
-                {
-                  icon: MembershipContent3Icon,
-                  text: item.text,
-                  status: openIndex === index ? closeIcon : openIcon,
-                },
-              ]"
+              :coaching="{
+                icon: MembershipContent3Icon,
+                text: item.text,
+                status: openIndex === index ? closeIcon : openIcon,
+              }"
             >
               <template #desc v-if="openIndex === index">
                 {{ item.desc }}

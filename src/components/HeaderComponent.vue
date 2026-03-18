@@ -25,7 +25,7 @@ const handleMenu = () => {
         <li
           class="text-gray-500 text-[40px] hover:scale-105 transition duration-500 ease-in-out font-normal"
         >
-          <router-link to="/home">Course</router-link>
+          <router-link to="/course">Course</router-link>
         </li>
         <li
           class="text-gray-500 text-[40px] hover:scale-105 transition duration-500 ease-in-out font-normal"
@@ -56,7 +56,7 @@ const handleMenu = () => {
         <li
           class="text-gray-500 hover:scale-105 transition duration-500 ease-in-out font-normal text-[25px]"
         >
-          <router-link to="/home">Course</router-link>
+          <router-link to="/course">Course</router-link>
         </li>
         <li
           class="text-gray-500 hover:scale-105 transition duration-500 ease-in-out font-normal text-[25px]"
@@ -88,7 +88,7 @@ const handleMenu = () => {
             <router-link to="/home">Home</router-link>
           </li>
           <li class="text-gray-500 text-[20px] font-normal">
-            <router-link to="/home">Course</router-link>
+            <router-link to="/course">Course</router-link>
           </li>
           <li class="text-gray-500 text-[20px] font-normal">
             <router-link to="/membership">Careers</router-link>
