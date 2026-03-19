@@ -1,10 +1,10 @@
 <script setup>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import HomeContent2Card from '@/components/HomeContent2Card.vue'
+import HeaderComponent from '../components/CommonComponent/HeaderComponent.vue'
+import HomeContent2Card from '../components/HomeComponent/HomeContent2Card.vue'
 import '../assets/main.css'
-import HomeContent3Card from '@/components/HomeContent3Card.vue'
-import HomeContent4Card from '@/components/HomeContent4Card.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
+import HomeContent3Card from '../components/HomeComponent/HomeContent3Card.vue'
+import HomeContent4Card from '../components/HomeComponent/HomeContent4Card.vue'
+import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
 </script>
 
 <template>

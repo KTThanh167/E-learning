@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import '../assets/main.css'
+import '@/assets/main.css'
 const navMenu = ref(false)
 
 const handleMenu = () => {
@@ -11,7 +11,10 @@ const handleMenu = () => {
 <template>
   <div class="header">
     <div class="header_logo">
-      <img src="../img/logo-heading.png" alt="logo" />
+      <img
+        src="C:\Users\thanh\OneDrive\Máy tính\Đăng nhập, đăng kí vue\baitap1\src\img\logo-heading.png"
+        alt="logo"
+      />
     </div>
 
     <!-- MENU DESTOP -->
@@ -104,7 +107,10 @@ const handleMenu = () => {
     </div>
 
     <div class="header_avt">
-      <img src="../img/heading-avt.png" alt="avt" />
+      <img
+        src="C:\Users\thanh\OneDrive\Máy tính\Đăng nhập, đăng kí vue\baitap1\src\img\heading-avt.png"
+        alt="avt"
+      />
       <p class="text-[rgba(0,0,0,1)] text-[20px] lg:text-[40px] font-medium">Lina</p>
       <font-awesome-icon icon="angle-down" />
     </div>
