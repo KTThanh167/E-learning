@@ -1,19 +1,20 @@
 <script setup>
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import MembershipContent1Card from '@/components/MembershipContent1Card.vue'
+import HeaderComponent from '../components/CommonComponent/HeaderComponent.vue'
+import MembershipContent1Card from '../components/MembershipComponent/MembershipContent1Card.vue'
 import iconFree from '../img/MembershipIconFree.png'
 import iconIndividual from '../img/MembershipIconIndividual.png'
 import iconCorporate from '../img/MembershipIconCorporate.png'
-import MembershipContent3 from '@/components/MembershipContent3.vue'
+import MembershipContent3 from '../components/MembershipComponent/MembershipContent3.vue'
 import MembershipContent3Icon from '../img/MembershipContent3Icon.png'
 import openIcon from '../img/open-icon.png'
 import closeIcon from '../img/close-icon.png'
 import { ref } from 'vue'
-import MembershipContent4Card from '@/components/MembershipContent4Card.vue'
+import MembershipContent4Card from '../components/MembershipComponent/MembershipContent4Card.vue'
 import MembershipContent4Img from '../img/MembershipContent4Img.png'
-import MembershipContent5Card from '@/components/MembershipContent5Card.vue'
+import MembershipContent5Card from '../components/MembershipComponent/MembershipContent5Card.vue'
 import MembershipContent5Img from '../img/MembershipContent5Img.png'
-import FooterComponent from '@/components/FooterComponent.vue'
+import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
+import Content2Component from '@/components/MembershipComponent/Content2Component.vue'
 
 const openIndex = ref(null)
 const coachingList = [
@@ -82,6 +83,12 @@ const teachers = [
     desc: 'Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...',
   },
 ]
+
+const coaching = ref({
+  title: 'Online coaching lessons for remote learning.',
+  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor',
+  button: 'Start learning now',
+})
 </script>
 
 <template>
@@ -150,24 +157,7 @@ const teachers = [
     </div>
     <!-- Content 2 -->
     <div class="container">
-      <div
-        class="content-2 bg-[rgba(37,38,65,1)] flex flex-col items-center rounded-[37px] mt-[200px]"
-      >
-        <p class="text-white font-semibold text-[18px] lg:text-[36px] mt-[70px]">
-          Online coaching lessons for remote learning.
-        </p>
-        <p
-          class="text-center max-w-[830px] text-white font-normal text-[12px] lg:text-[24px] mt-[30px]"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum
-          dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor
-        </p>
-        <button
-          class="text-white px-[40px] py-[20px] bg-[rgba(73,187,189,1)] mt-[70px] rounded-[12px] mb-[80px] hover:scale-105 transition duration-700 ease-in-out"
-        >
-          Start learning now
-        </button>
-      </div>
+      <Content2Component :coaching="coaching"></Content2Component>
     </div>
     <!-- Content 3 -->
     <div class="container">

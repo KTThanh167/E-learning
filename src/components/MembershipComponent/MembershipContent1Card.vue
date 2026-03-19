@@ -1,12 +1,27 @@
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
-  benefits: Array,
-  buttonType: String,
+  benefits: {
+    type: Array,
+  },
+  buttonType: {
+    type: String,
+    default: null,
+  },
   highlight: {
     type: Boolean,
     default: false,
     required: false,
   },
+})
+
+const buttonClass = computed(() => {
+  return [
+    props.buttonType === 'primary' ? 'bg-[#49BBBD]' : 'bg-white',
+    props.buttonType === 'primary' ? 'text-white' : 'text-[rgba(73,187,189,1)]',
+    props.buttonType === 'primary' ? 'text-[12px] lg:text-[24px]' : 'text-[9px] lg:text-[18px]',
+  ]
 })
 </script>
 
@@ -41,12 +56,8 @@ const props = defineProps({
       </div>
     </div>
     <button
-      :class="[
-        'border-[1px] mt-2 lg:mt-4 py-2 px-4 rounded-[16px] font-bold hover:scale-105 transition duration-700 ease-in-out',
-        buttonType === 'primary' ? 'bg-[#49BBBD]' : 'bg-white',
-        buttonType === 'primary' ? 'text-white' : 'text-[rgba(73,187,189,1)]',
-        buttonType === 'primary' ? 'text-[12px] lg:text-[24px]' : 'text-[9px] lg:text-[18px]',
-      ]"
+      :class="buttonClass"
+      class="border-[1px] mt-2 lg:mt-4 py-2 px-4 rounded-[16px] font-bold hover:scale-105 transition duration-700 ease-in-out"
     >
       <slot name="button"></slot>
     </button>

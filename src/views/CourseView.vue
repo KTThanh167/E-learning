@@ -1,9 +1,9 @@
 <script setup>
-import CourseContent1Card from '@/components/CourseContent1Card.vue'
-import HeaderComponent from '@/components/HeaderComponent.vue'
+import CourseContent1Card from '../components/CourseComponent/CourseContent1Card.vue'
+import HeaderComponent from '../components/CommonComponent/HeaderComponent.vue'
 import CourseContent1Img from '../img/CourseContent1Img.png'
 import CourseContent1UserImg from '../img/CourseContent1UserImg.png'
-import CourseContent2Card from '@/components/CourseContent2Card.vue'
+import CourseContent2Card from '../components/CourseComponent/CourseContent2Card.vue'
 import CourseContent2Img1 from '../img/CourseContent2Img1.png'
 import CourseContent2Img2 from '../img/CourseContent2Img2.png'
 import CourseContent2Img3 from '../img/CourseContent2Img3.png'
@@ -17,8 +17,8 @@ import CourseContent3Img2 from '../img/Homeview-content-4-img-2.png'
 import UserAvt from '../img/user-avatar.png'
 
 import { ref } from 'vue'
-import CourseContent3Card from '@/components/CourseContent3Card.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
+import CourseContent3Card from '../components/CourseComponent/CourseContent3Card.vue'
+import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
 
 const courseList = ref([
   {
