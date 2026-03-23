@@ -11,7 +11,7 @@ const props = defineProps({
     >
       <div class="card-header flex flex-col self-center">
         <div
-          class="img rounded-[20px] overflow-hidden w-[167px] lg:w-[222px] justify-center items-center"
+          class="img rounded-[20px] overflow-hidden max-w-[167px] lg:max-w-[222px] justify-center items-center w-full"
         >
           <img class="w-full object-cover" :src="item.img" alt="" />
         </div>
