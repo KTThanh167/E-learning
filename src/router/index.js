@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
-import UserPageView from '@/views/UserPageView.vue'
 import MembershipPage from '@/views/MembershipPage.vue'
 import CourseView from '@/views/CourseView.vue'
+import CourseDetail from '@/views/CourseDetail.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,11 +33,6 @@ const router = createRouter({
       component: RegisterView,
     },
     {
-      path: '/userpage',
-      name: 'userpage',
-      component: UserPageView,
-    },
-    {
       path: '/membership',
       name: 'membership',
       component: MembershipPage,
@@ -46,6 +41,11 @@ const router = createRouter({
       path: '/course',
       name: 'course',
       component: CourseView,
+    },
+    {
+      path: '/coursedetail',
+      name: 'coursedetail',
+      component: CourseDetail,
     },
   ],
 })
