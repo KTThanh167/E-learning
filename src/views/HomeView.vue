@@ -1,9 +1,9 @@
 <script setup>
 import TheHeader from '../components/Layout/TheHeader.vue'
-import HomeContent2Card from '../components/Home/HomeContent2Card.vue'
+import BlogCategoryCard from '../components/Home/BlogCategoryCard.vue'
 import '../assets/main.css'
-import HomeContent3Card from '../components/Home/HomeContent3Card.vue'
-import HomeContent4Card from '../components/Home/HomeContent4Card.vue'
+import FeaturedBlogCard from '../components/Home/FeaturedBlogCard.vue'
+import MarketingContentCard from '../components/Home/MarketingContentCard.vue'
 import TheFooter from '../components/Layout/TheFooter.vue'
 </script>
 
@@ -56,7 +56,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
       >
         <!-- Card 1 -->
         <div class="content-2-body-card-1">
-          <HomeContent2Card>
+          <BlogCategoryCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -67,11 +67,11 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #title>
               <p>UX/UI</p>
             </template>
-          </HomeContent2Card>
+          </BlogCategoryCard>
         </div>
         <!-- Card 2 -->
         <div class="content-2-body-card-2">
-          <HomeContent2Card>
+          <BlogCategoryCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -82,11 +82,11 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #title>
               <p>React</p>
             </template>
-          </HomeContent2Card>
+          </BlogCategoryCard>
         </div>
         <!-- Card 3 -->
         <div class="content-2-body-card-3">
-          <HomeContent2Card>
+          <BlogCategoryCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -97,11 +97,11 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #title>
               <p>PHP</p>
             </template>
-          </HomeContent2Card>
+          </BlogCategoryCard>
         </div>
         <!-- Card 4 -->
         <div class="content-2-body-card-4">
-          <HomeContent2Card>
+          <BlogCategoryCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -112,7 +112,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #title>
               <p>JavaScript</p>
             </template>
-          </HomeContent2Card>
+          </BlogCategoryCard>
         </div>
       </div>
     </div>
@@ -130,7 +130,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
         <div class="content-3-body grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-[80px]">
           <!-- Card 1 -->
           <div class="content-3-body-1">
-            <HomeContent3Card>
+            <FeaturedBlogCard>
               <template #image-title>
                 <img
                   class="w-full h-full object-cover"
@@ -160,11 +160,11 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               <template #views>
                 <p>251,232</p>
               </template>
-            </HomeContent3Card>
+            </FeaturedBlogCard>
           </div>
           <!-- Card 2 -->
           <div class="content-3-body-2">
-            <HomeContent3Card>
+            <FeaturedBlogCard>
               <template #image-title>
                 <img
                   class="w-full h-full object-cover"
@@ -194,7 +194,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               <template #views>
                 <p>251,232</p>
               </template>
-            </HomeContent3Card>
+            </FeaturedBlogCard>
           </div>
         </div>
         <div class="content-3-footer flex gap-5 pt-[70px] justify-end">
@@ -228,7 +228,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
           class="content-4-body gap-[25px] lg:gap-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
         >
           <!-- Card 1 -->
-          <HomeContent4Card>
+          <MarketingContentCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -274,9 +274,9 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #new-price>
               <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
             </template>
-          </HomeContent4Card>
+          </MarketingContentCard>
           <!-- Card 2 -->
-          <HomeContent4Card>
+          <MarketingContentCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -323,9 +323,9 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #new-price>
               <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
             </template>
-          </HomeContent4Card>
+          </MarketingContentCard>
           <!-- Card 3 -->
-          <HomeContent4Card>
+          <MarketingContentCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -371,9 +371,9 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #new-price>
               <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
             </template>
-          </HomeContent4Card>
+          </MarketingContentCard>
           <!-- Card 4 -->
-          <HomeContent4Card>
+          <MarketingContentCard>
             <template #image>
               <img
                 class="w-full h-full object-cover"
@@ -419,7 +419,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #new-price>
               <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
             </template>
-          </HomeContent4Card>
+          </MarketingContentCard>
         </div>
       </div>
     </div>
