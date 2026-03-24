@@ -1,18 +1,18 @@
 <script setup>
 import TheHeader from '../components/Layout/TheHeader.vue'
 import PricingSection from '../components/Membership/PricingSection.vue'
-import iconFree from '../assets/img/Icon/MembershipIconFree.png'
-import iconIndividual from '../assets/img/Icon/MembershipIconIndividual.png'
-import iconCorporate from '../assets/img/Icon/MembershipIconCorporate.png'
+import iconFree from '../assets/img/Icon/membership-free.png'
+import iconIndividual from '../assets/img/Icon/membership-individual.png'
+import iconCorporate from '../assets/img/Icon/membership-corporate.png'
 import RemoteLearningDesc from '../components/Membership/RemoteLearningDesc.vue'
-import MembershipContent3Icon from '../assets/img/Icon/MembershipContent3Icon.png'
-import openIcon from '../assets/img/Icon/open-icon.png'
-import closeIcon from '../assets/img/Icon/close-icon.png'
+import MembershipContent3Icon from '../assets/img/Icon/green-circle.png'
+import openIcon from '../assets/img/Icon/open.png'
+import closeIcon from '../assets/img/Icon/close.png'
 import { ref } from 'vue'
 import StudentsCommentCard from '../components/Membership/StudentsCommentCard.vue'
-import MembershipContent4Img from '../assets/img/Membership/MembershipContent4Img.png'
-import FeatureCards from '../components/Membership/FeatureCards.vue'
-import MembershipContent5Img from '../assets/img/Membership/MembershipContent5Img.png'
+import MembershipContent4Img from '../assets/img/Membership/student-avatar.png'
+import FeatureCards from '../components/Membership/FeatureCard.vue'
+import MembershipContent5Img from '../assets/img/Membership/teacher-card.png'
 import TheFooter from '../components/Layout/TheFooter.vue'
 import MembershipBanner from '@/components/Membership/MembershipBanner.vue'
 
@@ -204,8 +204,8 @@ const coaching = ref({
             >
               <!-- <img src="../img/angle-left.png" alt="" /> -->
               <picture>
-                <source media="(max-width: 767px)" srcset="../img/angle-left.png" />
-                <img src="../img/angle-left.png" alt="" />
+                <source media="(max-width: 767px)" srcset="../assets/img/Icon/angle-left.png" />
+                <img src="../assets/img/Icon/angle-left.png" alt="" />
               </picture>
             </button>
 
@@ -214,8 +214,8 @@ const coaching = ref({
             >
               <!-- <img src="../img/angle-right.png" alt="" /> -->
               <picture>
-                <source media="(max-width: 767px)" srcset="../img/angle-right.png" />
-                <img src="../img/angle-right.png" alt="" />
+                <source media="(max-width: 767px)" srcset="../assets/img/Icon/angle-right.png" />
+                <img src="../assets/img/Icon/angle-right.png" alt="" />
               </picture>
             </button>
 

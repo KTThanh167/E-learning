@@ -11,7 +11,7 @@ const handleMenu = () => {
 <template>
   <div class="header">
     <div class="header_logo">
-      <img src="../../assets/img/Icon/logo-heading.png" alt="logo" />
+      <img src="../../assets/img/Icon/logo.png" alt="logo" />
     </div>
 
     <!-- MENU DESTOP -->
@@ -104,7 +104,7 @@ const handleMenu = () => {
     </div>
 
     <div class="header_avt">
-      <img src="../../assets/img/Avatar/heading-avt.png" alt="avt" />
+      <img src="../../assets/img/Avatar/heading-avatar.png" alt="avt" />
       <p class="text-[rgba(0,0,0,1)] text-[20px] lg:text-[40px] font-medium">Lina</p>
       <font-awesome-icon icon="angle-down" />
     </div>

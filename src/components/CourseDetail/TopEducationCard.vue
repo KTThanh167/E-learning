@@ -4,7 +4,7 @@ const props = defineProps({
     type: Object,
   },
 })
-import bgImg from '../../assets/img/Home/Homeview-content-3-img-1.png'
+import bgImg from '../../assets/img/Home/related-blog-01.png'
 </script>
 
 <template>
