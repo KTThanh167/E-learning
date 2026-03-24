@@ -70,7 +70,7 @@ const handleRegister = () => {
   <div class="container">
     <div class="register">
       <div class="register_left">
-        <img class="register_left-img" src="../img/register-img.png" alt="" />
+        <img class="register_left-img" src="../assets/img/Register/register-img.png" alt="" />
         <div class="register_left-text">
           <p class="font-w-700 text-37">Lorem Ipsum is simply</p>
           <p class="font-w-400 text-25">Lorem Ipsum is simply</p>
@@ -116,7 +116,7 @@ const handleRegister = () => {
               v-model="password"
             />
             <button class="password-button" type="button" @click="handleSeePassword">
-              <img src="../img/invisible1.svg" alt="" />
+              <img src="../assets/img/Icon/invisible1.svg" alt="" />
             </button>
           </div>
           <button class="register-button font-w-400 text-16">Register</button>

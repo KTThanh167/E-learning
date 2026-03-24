@@ -1,11 +1,7 @@
 <template>
   <div class="footer bg-[rgba(37,38,65,1)] pt-[70px] pb-[40px] flex flex-col items-center">
     <div class="footer-logo flex items-center">
-      <img
-        class="pr-[80px]"
-        src="C:\Users\thanh\OneDrive\Máy tính\Đăng nhập, đăng kí vue\baitap1\src\img\logo-heading.png"
-        alt=""
-      />
+      <img class="pr-[80px]" src="../../assets/img/Icon/logo-heading.png" alt="" />
       <div class="border-[1px] text-[rgba(98,99,129,1)] h-12"></div>
       <p class="text-[rgba(255,255,255,1)] text-[11px] lg:text-[22px] pl-[40px]">
         Virtual Class <br />

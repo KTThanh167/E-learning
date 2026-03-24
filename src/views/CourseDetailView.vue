@@ -1,16 +1,16 @@
 <script setup>
 import { ref } from 'vue'
-import HeaderComponent from '@/components/CommonComponent/HeaderComponent.vue'
-import bgImg from '../img/CourseDetail-Img1.png'
-import CourseOverview from '@/components/CourseDetail Component/CourseOverview.vue'
-import CourseSideBar from '@/components/CourseDetail Component/CourseSideBar.vue'
-import CourseContent3Card from '@/components/CourseComponent/CourseContent3Card.vue'
-import CourseContent3Img1 from '../img/Homeview-content-4-img-1.png'
-import CourseContent3Img2 from '../img/Homeview-content-4-img-2.png'
-import UserAvt from '../img/user-avatar.png'
-import ClassroomPreview from '@/components/CourseDetail Component/ClassroomPreview.vue'
-import TopEducationCard from '@/components/CourseDetail Component/TopEducationCard.vue'
-import FooterComponent from '@/components/CommonComponent/FooterComponent.vue'
+import HeaderComponent from '@/components/Layout/HeaderComponent.vue'
+import bgImg from '../assets/img/Course/CourseDetail-Img1.png'
+import CourseOverview from '@/components/CourseDetail/CourseOverview.vue'
+import CourseSideBar from '@/components/CourseDetail/CourseSideBar.vue'
+import CourseContent3Card from '@/components/Course/CourseContent3Card.vue'
+import CourseContent3Img1 from '../assets/img/Home/Homeview-content-4-img-1.png'
+import CourseContent3Img2 from '../assets/img/Home/Homeview-content-4-img-2.png'
+import UserAvt from '../assets/img/Avatar/user-avatar.png'
+import ClassroomPreview from '@/components/CourseDetail/ClassroomPreview.vue'
+import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
+import FooterComponent from '@/components/Layout/FooterComponent.vue'
 
 const coursesRecommended = ref([
   {

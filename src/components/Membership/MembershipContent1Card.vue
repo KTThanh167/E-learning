@@ -17,11 +17,16 @@ const props = defineProps({
 })
 
 const buttonClass = computed(() => {
-  return [
-    props.buttonType === 'primary' ? 'bg-[#49BBBD]' : 'bg-white',
-    props.buttonType === 'primary' ? 'text-white' : 'text-[rgba(73,187,189,1)]',
-    props.buttonType === 'primary' ? 'text-[12px] lg:text-[24px]' : 'text-[9px] lg:text-[18px]',
-  ]
+  switch (props.buttonType) {
+    case 'primary':
+      return ['bg-[#49BBBD]', 'text-white', 'text-[12px] lg:text-[24px]']
+
+    case 'secondary':
+      return ['bg-white', 'text-red-500', 'text-[12px] lg:text-[24px]']
+
+    default:
+      return ['bg-white', 'text-[rgba(73,187,189,1)]', 'text-[9px] lg:text-[18px]']
+  }
 })
 </script>
 

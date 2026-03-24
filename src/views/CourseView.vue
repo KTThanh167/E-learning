@@ -1,24 +1,24 @@
 <script setup>
-import CourseContent1Card from '../components/CourseComponent/CourseContent1Card.vue'
-import HeaderComponent from '../components/CommonComponent/HeaderComponent.vue'
-import CourseContent1Img from '../img/CourseContent1Img.png'
-import CourseContent1UserImg from '../img/CourseContent1UserImg.png'
-import CourseContent2Card from '../components/CourseComponent/CourseContent2Card.vue'
-import CourseContent2Img1 from '../img/CourseContent2Img1.png'
-import CourseContent2Img2 from '../img/CourseContent2Img2.png'
-import CourseContent2Img3 from '../img/CourseContent2Img3.png'
-import CourseContent2Img4 from '../img/CourseContent2Img4.png'
-import CourseContent2Img5 from '../img/CourseContent2Img5.png'
-import CourseContent2Img6 from '../img/CourseContent2Img6.png'
-import CourseContent2Img7 from '../img/CourseContent2Img7.png'
-import CourseContent2Img8 from '../img/CourseContent2Img8.png'
-import CourseContent3Img1 from '../img/Homeview-content-4-img-1.png'
-import CourseContent3Img2 from '../img/Homeview-content-4-img-2.png'
-import UserAvt from '../img/user-avatar.png'
+import CourseContent1Card from '../components/Course/CourseContent1Card.vue'
+import HeaderComponent from '../components/Layout/HeaderComponent.vue'
+import CourseContent1Img from '../assets/img/Course/CourseContent1Img.png'
+import CourseContent1UserImg from '../assets/img/Course/CourseContent1UserImg.png'
+import CourseContent2Card from '../components/Course/CourseContent2Card.vue'
+import CourseContent2Img1 from '../assets/img/Course/CourseContent2Img1.png'
+import CourseContent2Img2 from '../assets/img/Course/CourseContent2Img2.png'
+import CourseContent2Img3 from '../assets/img/Course/CourseContent2Img3.png'
+import CourseContent2Img4 from '../assets/img/Course/CourseContent2Img4.png'
+import CourseContent2Img5 from '../assets/img/Course/CourseContent2Img5.png'
+import CourseContent2Img6 from '../assets/img/Course/CourseContent2Img6.png'
+import CourseContent2Img7 from '../assets/img/Course/CourseContent2Img7.png'
+import CourseContent2Img8 from '../assets/img/Course/CourseContent2Img8.png'
+import CourseContent3Img1 from '../assets/img/Home/Homeview-content-4-img-1.png'
+import CourseContent3Img2 from '../assets/img/Home/Homeview-content-4-img-2.png'
+import UserAvt from '../assets/img/Avatar/user-avatar.png'
 
 import { ref } from 'vue'
-import CourseContent3Card from '../components/CourseComponent/CourseContent3Card.vue'
-import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
+import CourseContent3Card from '../components/Course/CourseContent3Card.vue'
+import FooterComponent from '../components/Layout/FooterComponent.vue'
 
 const courseList = ref([
   {
@@ -171,14 +171,14 @@ const coursesRecommended = ref([
           <button>
             <img
               class="bg-[rgba(73,187,189,0.5)] py-[11px] px-[20px]"
-              src="../img/angle-left.png"
+              src="../assets/img/Icon/angle-left.png"
               alt=""
             />
           </button>
           <button>
             <img
               class="bg-[rgba(73,187,189,1)] py-[11px] px-[20px]"
-              src="../img/angle-right.png"
+              src="../assets/img/Icon/angle-right.png"
               alt=""
             />
           </button>
@@ -216,10 +216,10 @@ const coursesRecommended = ref([
           class="content-3-footer pb-[113px] self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]"
         >
           <button class="bg-[rgba(73,187,189,0.5)] py-[11px] px-[20px]">
-            <img src="../img/angle-left.png" alt="" />
+            <img src="../assets/img/Icon/angle-left.png" alt="" />
           </button>
           <button class="bg-[rgba(73,187,189,0.5)] py-[11px] px-[20px]">
-            <img src="../img/angle-right.png" alt="" />
+            <img src="../assets/img/Icon/angle-right.png" alt="" />
           </button>
         </div>
       </div>
