@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import RatingProgress from './RatingProgress.vue'
-import userAvt from '../../img/heading-avt.png'
-import starImg from '../../img/starImg.png'
+import userAvt from '../../assets/img/Avatar/heading-avt.png'
+import starImg from '../../assets/img/Icon/starImg.png'
 
 const activeIndex = ref(0)
 const buttons = ['Overview', 'Overview', 'Overview', 'Overview']

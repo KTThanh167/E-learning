@@ -58,7 +58,7 @@ const handleSeePassword = () => {
   <div class="container">
     <div class="login">
       <div class="login_left">
-        <img class="login-img" src="../img/login-img.png" alt="" />
+        <img class="login-img" src="../assets/img/Login/login-img.png" alt="" />
         <div class="login_left-text">
           <p class="font-w-700 text-37">Lorem Ipsum is simply</p>
           <p class="font-w-400 text-25">Lorem Ipsum is simply</p>
@@ -94,7 +94,7 @@ const handleSeePassword = () => {
               v-model="password"
             />
             <button class="password_button" type="button" @click="handleSeePassword">
-              <img src="../img/invisible1.svg" alt="" />
+              <img src="../assets/img/Icon/invisible1.svg" alt="" />
             </button>
           </div>
           <div class="passwork-option">

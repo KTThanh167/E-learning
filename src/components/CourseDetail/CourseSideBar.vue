@@ -1,15 +1,15 @@
 <script setup>
 import { ref } from 'vue'
-import includeIcon1 from '../../img/include-icon-1.png'
-import includeIcon2 from '../../img/include-icon-2.png'
-import includeIcon3 from '../../img/include-icon-3.png'
-import includeIcon4 from '../../img/include-icon-4.png'
-import twitter from '../../img/twitter.png'
-import facebook from '../../img/facebook.png'
-import youtube from '../../img/youtube.png'
-import instagram from '../../img/instagram.png'
-import telegram from '../../img/telegram.png'
-import whatsapp from '../../img/whatsapp.png'
+import includeIcon1 from '../../assets/img/Icon/include-icon-1.png'
+import includeIcon2 from '../../assets/img/Icon/include-icon-2.png'
+import includeIcon3 from '../../assets/img/Icon/include-icon-3.png'
+import includeIcon4 from '../../assets/img/Icon/include-icon-4.png'
+import twitter from '../../assets/img/Icon/twitter.png'
+import facebook from '../../assets/img/Icon/facebook.png'
+import youtube from '../../assets/img/Icon/youtube.png'
+import instagram from '../../assets/img/Icon/instagram.png'
+import telegram from '../../assets/img/Icon/telegram.png'
+import whatsapp from '../../assets/img/Icon/whatsapp.png'
 
 const price = ref({
   new: '$49.65',
@@ -54,7 +54,7 @@ const time = ref('11 hours left at this price')
     <div class="">
       <img
         class="w-[220px] sm:w-[300px] md:w-[380px] xl:w-[443px] aspect-[443/268] object-cover m-auto"
-        src="../../img/CourseDetail-Img1.png"
+        src="../../assets/img/Course/CourseDetail-Img1.png"
         alt=""
       />
       <div class="flex flex-col gap-[20px]">

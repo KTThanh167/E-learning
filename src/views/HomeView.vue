@@ -1,10 +1,10 @@
 <script setup>
-import HeaderComponent from '../components/CommonComponent/HeaderComponent.vue'
-import HomeContent2Card from '../components/HomeComponent/HomeContent2Card.vue'
+import HeaderComponent from '../components/Layout/HeaderComponent.vue'
+import HomeContent2Card from '../components/Home/HomeContent2Card.vue'
 import '../assets/main.css'
-import HomeContent3Card from '../components/HomeComponent/HomeContent3Card.vue'
-import HomeContent4Card from '../components/HomeComponent/HomeContent4Card.vue'
-import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
+import HomeContent3Card from '../components/Home/HomeContent3Card.vue'
+import HomeContent4Card from '../components/Home/HomeContent4Card.vue'
+import FooterComponent from '../components/Layout/FooterComponent.vue'
 </script>
 
 <template>
@@ -38,7 +38,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
         <div class="content-1-right flex-1">
           <img
             class="rounded-[20px] mt-[20px] sm:mt-0"
-            src="../img/Homeview-content1-img.png"
+            src="../assets/img/Home/Homeview-content1-img.png"
             alt=""
           />
         </div>
@@ -60,7 +60,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-2-img-1.png"
+                src="../assets/img/Home/Homeview-content-2-img-1.png"
                 alt=""
               />
             </template>
@@ -75,7 +75,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-3-img-2.png"
+                src="../assets/img/Home/Homeview-content-3-img-2.png"
                 alt=""
               />
             </template>
@@ -90,7 +90,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-2-img-3.png"
+                src="../assets/img/Home/Homeview-content-2-img-3.png"
                 alt=""
               />
             </template>
@@ -105,7 +105,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-2-img-4.png"
+                src="../assets/img/Home/Homeview-content-2-img-4.png"
                 alt=""
               />
             </template>
@@ -134,7 +134,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
               <template #image-title>
                 <img
                   class="w-full h-full object-cover"
-                  src="../img/Homeview-content-4-img-1.png"
+                  src="../assets/img/Home/Homeview-content-4-img-1.png"
                   alt=""
                 />
               </template>
@@ -144,7 +144,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
                 </p>
               </template>
               <template #image-user>
-                <img src="../img/heading-avt.png" alt="" />
+                <img src="../assets/img/Avatar/heading-avt.png" alt="" />
               </template>
               <template #user-name>
                 <p>Lina</p>
@@ -168,7 +168,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
               <template #image-title>
                 <img
                   class="w-full h-full object-cover"
-                  src="../img/Homeview-content-3-img-1.png"
+                  src="../assets/img/Home/Homeview-content-3-img-1.png"
                   alt=""
                 />
               </template>
@@ -180,7 +180,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
                 </p>
               </template>
               <template #image-user>
-                <img src="../img/heading-avt.png" alt="" />
+                <img src="../assets/img/Avatar/heading-avt.png" alt="" />
               </template>
               <template #user-name>
                 <p>Lina</p>
@@ -232,16 +232,16 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-3-img-1.png"
+                src="../assets/img/Home/Homeview-content-3-img-1.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../img/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../img/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
@@ -259,7 +259,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
               </p>
             </template>
             <template #user-image>
-              <img src="../img/user-avatar.png" alt="" />
+              <img src="../assets/img/Avatar/user-avatar.png" alt="" />
             </template>
             <template #user-name>
               <p>Lina</p>
@@ -280,16 +280,16 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-4-img-2.png"
+                src="../assets/img/Home/Homeview-content-4-img-2.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../img/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../img/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
@@ -308,7 +308,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
               </p>
             </template>
             <template #user-image>
-              <img src="../img/user-avatar.png" alt="" />
+              <img src="../assets/img/Avatar/user-avatar.png" alt="" />
             </template>
             <template #user-name>
               <p>Lina</p>
@@ -329,16 +329,16 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-4-img-3.png"
+                src="../assets/img/Home/Homeview-content-4-img-3.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../img/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../img/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
@@ -356,7 +356,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
               </p>
             </template>
             <template #user-image>
-              <img src="../img/user-avatar.png" alt="" />
+              <img src="../assets/img/Avatar/user-avatar.png" alt="" />
             </template>
             <template #user-name>
               <p>Lina</p>
@@ -377,16 +377,16 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../img/Homeview-content-4-img-4.png"
+                src="../assets/img/Home/Homeview-content-4-img-4.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../img/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../img/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time-icon.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
@@ -404,7 +404,7 @@ import FooterComponent from '../components/CommonComponent/FooterComponent.vue'
               </p>
             </template>
             <template #user-image>
-              <img src="../img/user-avatar.png" alt="" />
+              <img src="../assets/img/Avatar/user-avatar.png" alt="" />
             </template>
             <template #user-name>
               <p>Lina</p>

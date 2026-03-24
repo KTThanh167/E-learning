@@ -34,7 +34,7 @@
 
       <div class="relative z-10 rounded-[20px] overflow-hidden shadow-2xl">
         <img
-          src="../../img/classroomPreview-Img.png"
+          src="../../assets/img/Course/classroomPreview-Img.png"
           alt="Classroom"
           class="w-full h-auto object-cover"
         />
