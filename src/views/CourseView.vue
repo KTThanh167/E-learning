@@ -1,9 +1,9 @@
 <script setup>
-import CourseContent1Card from '../components/Course/CourseContent1Card.vue'
-import HeaderComponent from '../components/Layout/HeaderComponent.vue'
+import LearningProgressCard from '../components/Course/LearningProgressCard.vue'
+import TheHeader from '../components/Layout/TheHeader.vue'
 import CourseContent1Img from '../assets/img/Course/CourseContent1Img.png'
 import CourseContent1UserImg from '../assets/img/Course/CourseContent1UserImg.png'
-import CourseContent2Card from '../components/Course/CourseContent2Card.vue'
+import CategoryCard from '../components/Course/CategoryCard.vue'
 import CourseContent2Img1 from '../assets/img/Course/CourseContent2Img1.png'
 import CourseContent2Img2 from '../assets/img/Course/CourseContent2Img2.png'
 import CourseContent2Img3 from '../assets/img/Course/CourseContent2Img3.png'
@@ -17,8 +17,9 @@ import CourseContent3Img2 from '../assets/img/Home/Homeview-content-4-img-2.png'
 import UserAvt from '../assets/img/Avatar/user-avatar.png'
 
 import { ref } from 'vue'
-import CourseContent3Card from '../components/Course/CourseContent3Card.vue'
-import FooterComponent from '../components/Layout/FooterComponent.vue'
+import RecommendedCourseCard from '../components/Course/RecommendedCourseCard.vue'
+import Content2Component from '@/components/Membership/Content2Component.vue'
+import TheFooter from '../components/Layout/TheFooter.vue'
 
 const courseList = ref([
   {
@@ -101,6 +102,12 @@ const courseCategory = ref([
   },
 ])
 
+const coaching = ref({
+  title: 'Online coaching lessons for remote learning.',
+  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor',
+  button: 'Start learning now',
+})
+
 const coursesRecommended = ref([
   {
     img: CourseContent3Img1,
@@ -149,7 +156,7 @@ const coursesRecommended = ref([
   <div class="hero-section w-100%">
     <!-- Header -->
     <div class="container">
-      <HeaderComponent></HeaderComponent>
+      <TheHeader></TheHeader>
     </div>
     <!-- Content 1 -->
     <div class="content-1 bg-[rgba(157,204,255,0.2)] pt-[25px] pb-[28px] lg:pt-[50px] lg:pb-[57px]">
@@ -165,7 +172,7 @@ const coursesRecommended = ref([
         <div
           class="content-1-body pt-[25px] lg:pt-[50px] grid gap-[15px] lg:grid-cols-3 lg:gap-[50px]"
         >
-          <CourseContent1Card :courses="courseList" />
+          <LearningProgressCard :courses="courseList" />
         </div>
         <div class="content-1-footer self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]">
           <button>
@@ -195,7 +202,7 @@ const coursesRecommended = ref([
       <div
         class="content-2-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[80px] mb-[50px] lg:mb-[100px]"
       >
-        <CourseContent2Card :courses="courseCategory"></CourseContent2Card>
+        <CategoryCard :courses="courseCategory"></CategoryCard>
       </div>
     </div>
     <!-- Content 3 -->
@@ -210,7 +217,7 @@ const coursesRecommended = ref([
         <div
           class="content-3-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]"
         >
-          <CourseContent3Card :courses="coursesRecommended"></CourseContent3Card>
+          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
         </div>
         <div
           class="content-3-footer pb-[113px] self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]"
@@ -236,30 +243,13 @@ const coursesRecommended = ref([
         <div
           class="content-4-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
         >
-          <CourseContent3Card :courses="coursesRecommended"></CourseContent3Card>
+          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
         </div>
       </div>
     </div>
     <!-- Content 5 -->
     <div class="container">
-      <div class="content-5 bg-[rgba(37,38,65,1)] rounded-[37px] py-[70px]">
-        <div class="content-5-header text-center">
-          <p class="font-semibold text-[36px] text-[rgba(255,255,255,1)]">
-            Online coaching lessons for remote learning.
-          </p>
-        </div>
-        <div class="content-5-body px-[20px] lg:px-[80px] text-center pt-[30px]">
-          <p class="font-normal text-[24px] text-[rgba(255,255,255,1)]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem
-            ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor
-          </p>
-        </div>
-        <div class="content-5-footer text-center pt-[70px]">
-          <button class="bg-[rgba(73,187,189,1)] px-[40px] py-[20px] text-white rounded-[12px]">
-            Start learning now
-          </button>
-        </div>
-      </div>
+      <Content2Component :coaching="coaching"></Content2Component>
     </div>
     <!-- Content 6 -->
     <div class="container">
@@ -273,7 +263,7 @@ const coursesRecommended = ref([
         <div
           class="content-6-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
         >
-          <CourseContent3Card :courses="coursesRecommended"></CourseContent3Card>
+          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
         </div>
       </div>
     </div>
@@ -289,11 +279,11 @@ const coursesRecommended = ref([
         <div
           class="content-7-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
         >
-          <CourseContent3Card :courses="coursesRecommended"></CourseContent3Card>
+          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
         </div>
       </div>
     </div>
     <!-- Footer -->
-    <FooterComponent></FooterComponent>
+    <TheFooter></TheFooter>
   </div>
 </template>

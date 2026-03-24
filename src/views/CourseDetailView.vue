@@ -1,16 +1,16 @@
 <script setup>
 import { ref } from 'vue'
-import HeaderComponent from '@/components/Layout/HeaderComponent.vue'
+import TheHeader from '@/components/Layout/TheHeader.vue'
 import bgImg from '../assets/img/Course/CourseDetail-Img1.png'
 import CourseOverview from '@/components/CourseDetail/CourseOverview.vue'
 import CourseSideBar from '@/components/CourseDetail/CourseSideBar.vue'
-import CourseContent3Card from '@/components/Course/CourseContent3Card.vue'
+import CourseContent3Card from '@/components/Course/RecommendedCourseCard.vue'
 import CourseContent3Img1 from '../assets/img/Home/Homeview-content-4-img-1.png'
 import CourseContent3Img2 from '../assets/img/Home/Homeview-content-4-img-2.png'
 import UserAvt from '../assets/img/Avatar/user-avatar.png'
 import ClassroomPreview from '@/components/CourseDetail/ClassroomPreview.vue'
 import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
-import FooterComponent from '@/components/Layout/FooterComponent.vue'
+import TheFooter from '@/components/Layout/TheFooter.vue'
 
 const coursesRecommended = ref([
   {
@@ -71,7 +71,7 @@ const instructors = ref([
 
 <template>
   <!-- Header -->
-  <HeaderComponent></HeaderComponent>
+  <TheHeader></TheHeader>
   <!-- Course Detail -->
   <div class="relative">
     <img class="mt-[2rem] relative" :src="bgImg" alt="" />
@@ -119,5 +119,5 @@ const instructors = ref([
     </div>
   </div>
   <!-- Footer -->
-  <FooterComponent />
+  <TheFooter />
 </template>
