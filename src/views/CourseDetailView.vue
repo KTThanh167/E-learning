@@ -70,9 +70,11 @@ const instructors = ref([
 </script>
 
 <template>
-  <!-- Header -->
-  <TheHeader></TheHeader>
-  <!-- Course Detail -->
+  <div class="container">
+    <!-- Header -->
+    <TheHeader></TheHeader>
+    <!-- Course Detail -->
+  </div>
   <div class="relative">
     <img class="mt-[2rem] relative" :src="bgImg" alt="" />
     <div class="container flex flex-col xl:flex-row gap-[100px]">
