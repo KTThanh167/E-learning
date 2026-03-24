@@ -1,5 +1,5 @@
 <script setup>
-import HeaderComponent from '../components/Layout/HeaderComponent.vue'
+import TheHeader from '../components/Layout/TheHeader.vue'
 import MembershipContent1Card from '../components/Membership/MembershipContent1Card.vue'
 import iconFree from '../assets/img/Icon/MembershipIconFree.png'
 import iconIndividual from '../assets/img/Icon/MembershipIconIndividual.png'
@@ -13,7 +13,7 @@ import MembershipContent4Card from '../components/Membership/MembershipContent4C
 import MembershipContent4Img from '../assets/img/Membership/MembershipContent4Img.png'
 import MembershipContent5Card from '../components/Membership/MembershipContent5Card.vue'
 import MembershipContent5Img from '../assets/img/Membership/MembershipContent5Img.png'
-import FooterComponent from '../components/Layout/FooterComponent.vue'
+import TheFooter from '../components/Layout/TheFooter.vue'
 import Content2Component from '@/components/Membership/Content2Component.vue'
 
 const openIndex = ref(null)
@@ -95,7 +95,7 @@ const coaching = ref({
   <div class="hero-section w-100%">
     <!-- Header -->
     <div class="container">
-      <HeaderComponent></HeaderComponent>
+      <TheHeader></TheHeader>
     </div>
     <!-- Content 1 -->
     <div class="container">
@@ -295,6 +295,6 @@ const coaching = ref({
       </div>
     </div>
     <!-- Footer -->
-    <FooterComponent></FooterComponent>
+    <TheFooter></TheFooter>
   </div>
 </template>
