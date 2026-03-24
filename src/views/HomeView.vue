@@ -1,10 +1,10 @@
 <script setup>
-import HeaderComponent from '../components/Layout/HeaderComponent.vue'
+import TheHeader from '../components/Layout/TheHeader.vue'
 import HomeContent2Card from '../components/Home/HomeContent2Card.vue'
 import '../assets/main.css'
 import HomeContent3Card from '../components/Home/HomeContent3Card.vue'
 import HomeContent4Card from '../components/Home/HomeContent4Card.vue'
-import FooterComponent from '../components/Layout/FooterComponent.vue'
+import TheFooter from '../components/Layout/TheFooter.vue'
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import FooterComponent from '../components/Layout/FooterComponent.vue'
     <!-- Header -->
     <div class="container">
       <!-- Header -->
-      <HeaderComponent></HeaderComponent>
+      <TheHeader></TheHeader>
     </div>
     <!-- Content 1 -->
     <div
@@ -425,7 +425,7 @@ import FooterComponent from '../components/Layout/FooterComponent.vue'
     </div>
     <!-- Footer -->
     <div class="footer">
-      <FooterComponent></FooterComponent>
+      <TheFooter></TheFooter>
     </div>
   </div>
 </template>
