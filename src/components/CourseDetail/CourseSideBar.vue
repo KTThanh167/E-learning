@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import includeIcon1 from '../../assets/img/Icon/include-icon-1.png'
-import includeIcon2 from '../../assets/img/Icon/include-icon-2.png'
-import includeIcon3 from '../../assets/img/Icon/include-icon-3.png'
-import includeIcon4 from '../../assets/img/Icon/include-icon-4.png'
+import includeIcon1 from '../../assets/img/Icon/course-detail-sidebar-01.png'
+import includeIcon2 from '../../assets/img/Icon/course-detail-sidebar-02.png'
+import includeIcon3 from '../../assets/img/Icon/course-detail-sidebar-03.png'
+import includeIcon4 from '../../assets/img/Icon/course-detail-sidebar-04.png'
 import twitter from '../../assets/img/Icon/twitter.png'
 import facebook from '../../assets/img/Icon/facebook.png'
 import youtube from '../../assets/img/Icon/youtube.png'
@@ -54,7 +54,7 @@ const time = ref('11 hours left at this price')
     <div class="">
       <img
         class="w-[220px] sm:w-[300px] md:w-[380px] xl:w-[443px] aspect-[443/268] object-cover m-auto"
-        src="../../assets/img/Course/CourseDetail-Img1.png"
+        src="../../assets/img/Course/banner.png"
         alt=""
       />
       <div class="flex flex-col gap-[20px]">

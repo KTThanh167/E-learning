@@ -38,7 +38,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
         <div class="content-1-right flex-1">
           <img
             class="rounded-[20px] mt-[20px] sm:mt-0"
-            src="../assets/img/Home/Homeview-content1-img.png"
+            src="../assets/img/Home/banner.png"
             alt=""
           />
         </div>
@@ -60,7 +60,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-2-img-1.png"
+                src="../assets/img/Home/blog-list-01.png"
                 alt=""
               />
             </template>
@@ -75,7 +75,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-3-img-2.png"
+                src="../assets/img/Home/blog-list-02.png"
                 alt=""
               />
             </template>
@@ -90,7 +90,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-2-img-3.png"
+                src="../assets/img/Home/blog-list-03.png"
                 alt=""
               />
             </template>
@@ -105,7 +105,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-2-img-4.png"
+                src="../assets/img/Home/blog-list-04.png"
                 alt=""
               />
             </template>
@@ -134,7 +134,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               <template #image-title>
                 <img
                   class="w-full h-full object-cover"
-                  src="../assets/img/Home/Homeview-content-4-img-1.png"
+                  src="../assets/img/Home/related-blog-01.png"
                   alt=""
                 />
               </template>
@@ -144,7 +144,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
                 </p>
               </template>
               <template #image-user>
-                <img src="../assets/img/Avatar/heading-avt.png" alt="" />
+                <img src="../assets/img/Avatar/heading-avatar.png" alt="" />
               </template>
               <template #user-name>
                 <p>Lina</p>
@@ -168,7 +168,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               <template #image-title>
                 <img
                   class="w-full h-full object-cover"
-                  src="../assets/img/Home/Homeview-content-3-img-1.png"
+                  src="../assets/img/Home/related-blog-02.png"
                   alt=""
                 />
               </template>
@@ -180,7 +180,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
                 </p>
               </template>
               <template #image-user>
-                <img src="../assets/img/Avatar/heading-avt.png" alt="" />
+                <img src="../assets/img/Avatar/heading-avatar.png" alt="" />
               </template>
               <template #user-name>
                 <p>Lina</p>
@@ -232,16 +232,16 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-3-img-1.png"
+                src="../assets/img/Home/marketing-articles-01.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../assets/img/Icon/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../assets/img/Icon/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
@@ -280,16 +280,16 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-4-img-2.png"
+                src="../assets/img/Home/marketing-articles-02.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../assets/img/Icon/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../assets/img/Icon/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
@@ -329,16 +329,16 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-4-img-3.png"
+                src="../assets/img/Home/marketing-articles-03.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../assets/img/Icon/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../assets/img/Icon/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
@@ -377,16 +377,16 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <template #image>
               <img
                 class="w-full h-full object-cover"
-                src="../assets/img/Home/Homeview-content-4-img-4.png"
+                src="../assets/img/Home/marketing-articles-04.png"
                 alt=""
               />
             </template>
             <template #design>
-              <img src="../assets/img/Icon/design-icon.png" alt="" />
+              <img src="../assets/img/Icon/design.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">Design</p>
             </template>
             <template #time>
-              <img src="../assets/img/Icon/time-icon.png" alt="" />
+              <img src="../assets/img/Icon/time.png" alt="" />
               <p class="text-[rgba(105,105,132,1)] font-medium text-[7px] lg:text-[14px]">
                 3 Month
               </p>
