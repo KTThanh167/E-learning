@@ -18,7 +18,7 @@ import UserAvt from '../assets/img/Avatar/user-avatar.png'
 
 import { ref } from 'vue'
 import RecommendedCourseCard from '../components/Course/RecommendedCourseCard.vue'
-import Content2Component from '@/components/Membership/Content2Component.vue'
+import Content2Component from '@/components/Membership/MembershipBanner.vue'
 import TheFooter from '../components/Layout/TheFooter.vue'
 
 const courseList = ref([

@@ -1,20 +1,20 @@
 <script setup>
 import TheHeader from '../components/Layout/TheHeader.vue'
-import MembershipContent1Card from '../components/Membership/MembershipContent1Card.vue'
+import PricingSection from '../components/Membership/PricingSection.vue'
 import iconFree from '../assets/img/Icon/MembershipIconFree.png'
 import iconIndividual from '../assets/img/Icon/MembershipIconIndividual.png'
 import iconCorporate from '../assets/img/Icon/MembershipIconCorporate.png'
-import MembershipContent3 from '../components/Membership/MembershipContent3.vue'
+import RemoteLearningDesc from '../components/Membership/RemoteLearningDesc.vue'
 import MembershipContent3Icon from '../assets/img/Icon/MembershipContent3Icon.png'
 import openIcon from '../assets/img/Icon/open-icon.png'
 import closeIcon from '../assets/img/Icon/close-icon.png'
 import { ref } from 'vue'
-import MembershipContent4Card from '../components/Membership/MembershipContent4Card.vue'
+import StudentsCommentCard from '../components/Membership/StudentsCommentCard.vue'
 import MembershipContent4Img from '../assets/img/Membership/MembershipContent4Img.png'
-import MembershipContent5Card from '../components/Membership/MembershipContent5Card.vue'
+import FeatureCards from '../components/Membership/FeatureCards.vue'
 import MembershipContent5Img from '../assets/img/Membership/MembershipContent5Img.png'
 import TheFooter from '../components/Layout/TheFooter.vue'
-import Content2Component from '@/components/Membership/Content2Component.vue'
+import MembershipBanner from '@/components/Membership/MembershipBanner.vue'
 
 const openIndex = ref(null)
 const coachingList = [
@@ -107,7 +107,7 @@ const coaching = ref({
         </div>
         <div class="content-1-body flex flex-col lg:flex-row mt-[77px] gap-[15px] lg:gap-[30px]">
           <!-- Card 1 -->
-          <MembershipContent1Card
+          <PricingSection
             :benefits="[
               { icon: iconFree, text: 'Components-driven system' },
               { icon: iconFree, text: 'Sales-boosting landing pages' },
@@ -119,9 +119,9 @@ const coaching = ref({
             <template #price>FREE </template>
             <template #time>/ FOREVER</template>
             <template #button>Try for free</template>
-          </MembershipContent1Card>
+          </PricingSection>
           <!-- Card 2 -->
-          <MembershipContent1Card
+          <PricingSection
             :highlight="true"
             button-type="primary"
             :benefits="[
@@ -137,9 +137,9 @@ const coaching = ref({
             <template #price>$24 </template>
             <template #time>/ MONTH</template>
             <template #button>Try for free</template>
-          </MembershipContent1Card>
+          </PricingSection>
           <!-- Card 3 -->
-          <MembershipContent1Card
+          <PricingSection
             :benefits="[
               { icon: iconCorporate, text: 'Components-driven system' },
               { icon: iconCorporate, text: 'Sales-boosting landing pages' },
@@ -151,13 +151,13 @@ const coaching = ref({
             <template #price>$12 </template>
             <template #time>/ EDITOR</template>
             <template #button>Extended license</template>
-          </MembershipContent1Card>
+          </PricingSection>
         </div>
       </div>
     </div>
     <!-- Content 2 -->
     <div class="container">
-      <Content2Component :coaching="coaching"></Content2Component>
+      <MembershipBanner :coaching="coaching"></MembershipBanner>
     </div>
     <!-- Content 3 -->
     <div class="container">
@@ -169,7 +169,7 @@ const coaching = ref({
         </div>
         <div class="content-3-body w-full mt-[40px] lg:mt-[80px]">
           <div v-for="(item, index) in coachingList" :key="index">
-            <MembershipContent3
+            <RemoteLearningDesc
               :index="index"
               @showDesc="handleShowDesc"
               :coaching="{
@@ -181,7 +181,7 @@ const coaching = ref({
               <template #desc v-if="openIndex === index">
                 {{ item.desc }}
               </template>
-            </MembershipContent3>
+            </RemoteLearningDesc>
             <div class="w-full border-[1px]"></div>
           </div>
         </div>
@@ -222,11 +222,7 @@ const coaching = ref({
             <div
               class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[15px] lg:gap-[30px] pt-[50px]"
             >
-              <MembershipContent4Card
-                v-for="(student, index) in students"
-                :key="index"
-                class="h-full"
-              >
+              <StudentsCommentCard v-for="(student, index) in students" :key="index" class="h-full">
                 <template #img>
                   <img class="w-full h-full object-cover" :src="student.img" alt="" />
                 </template>
@@ -236,7 +232,7 @@ const coaching = ref({
                 <template #desc>
                   {{ student.desc }}
                 </template>
-              </MembershipContent4Card>
+              </StudentsCommentCard>
             </div>
           </div>
         </div>
@@ -283,14 +279,14 @@ const coaching = ref({
         class="content-5 pt-[175px] flex flex-col lg:flex-row gap-[50px] lg:gap-[100px] mb-[115px] lg:mb-[230px]"
       >
         <div v-for="(teacher, index) in teachers" :key="index">
-          <MembershipContent5Card>
+          <FeatureCards>
             <template #img>
               <img class="w-full h-full object-cover" :src="teacher.img" alt="" />
             </template>
             <template #title>{{ teacher.title }}</template>
             <template #desc>{{ teacher.desc }}</template>
             <template #button>Apply a teacher</template>
-          </MembershipContent5Card>
+          </FeatureCards>
         </div>
       </div>
     </div>
