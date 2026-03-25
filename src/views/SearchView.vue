@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import RecommendedCourseCard from '@/components/Course/RecommendedCourseCard.vue'
 import TheHeader from '@/components/Layout/TheHeader.vue'
 import LearningPlatform from '@/components/Search/LearningPlatform.vue'
@@ -10,8 +11,11 @@ import FilteredCourse02 from '../assets/img/Search/filtered-course-02.png'
 import FilteredCourse03 from '../assets/img/Search/filtered-course-03.png'
 import FilteredCourse04 from '../assets/img/Search/filtered-course-04.png'
 import UserAvt from '../assets/img/Avatar/user-avatar.png'
-import { ref } from 'vue'
+import CreatorCard from '@/components/Search/CreatorCard.vue'
 
+import Creator01 from '../assets/img/Search/creator-01.png'
+import Creator02 from '../assets/img/Search/creator-02.png'
+import Creator03 from '../assets/img/Search/creator-03.png'
 const platform = ref({
   title: 'Know about learning learning platform',
 })
@@ -70,6 +74,39 @@ const recommendedCourses = ref([
     newPrice: '$80',
   },
 ])
+
+const creators = ref([
+  {
+    img: Creator01,
+    title: 'Jane Cooper',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
+  },
+  {
+    img: Creator02,
+    title: 'Adam',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
+  },
+  {
+    img: Creator03,
+    title: 'Tomara',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
+  },
+  {
+    img: Creator01,
+    title: 'Jane Cooper',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
+  },
+  {
+    img: Creator02,
+    title: 'Adam',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
+  },
+  {
+    img: Creator03,
+    title: 'Tomara',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
+  },
+])
 </script>
 
 <template>
@@ -98,13 +135,32 @@ const recommendedCourses = ref([
         <button class="text-primary font-bold text-[20px]">See all</button>
       </div>
       <!-- Recommended card -->
-      <div class="grid grid-cols-4 gap-[50px] pt-[50px]">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 xl:gap-[50px] gap-[20px] pt-[50px]"
+      >
         <RecommendedCourseCard
           v-for="(item, index) in recommendedCourses"
           :key="index"
           :course="item"
         />
       </div>
+    </div>
+  </div>
+  <!-- real creators -->
+  <div class="container">
+    <!-- real creators header -->
+    <div class="mt-[90px] flex justify-between">
+      <p class="font-medium text-[30px]">Classes tought by real creators</p>
+      <button class="text-primary font-bold text-[20px]">See all</button>
+    </div>
+    <!-- real creators list card -->
+    <div class="mt-[50px] grid grid-cols-3 gap-[48px] pb-[80px]">
+      <CreatorCard
+        v-for="(item, index) in creators"
+        :key="index"
+        :creator="item"
+        class="mt-[150px]"
+      />
     </div>
   </div>
 </template>
