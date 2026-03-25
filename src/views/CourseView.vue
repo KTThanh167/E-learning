@@ -165,14 +165,12 @@ const coursesRecommended = ref([
           <p class="font-semibold text-[rgba(37,38,65,1)] text-[18px] lg:text-[36px]">
             Welcome back, ready for your next lesson?
           </p>
-          <button class="text-[rgba(73,187,189,1)] font-bold text-[10px] lg:text-[20px]">
-            View history
-          </button>
+          <button class="text-primary font-bold text-[10px] lg:text-[20px]">View history</button>
         </div>
         <div
           class="content-1-body pt-[25px] lg:pt-[50px] grid gap-[15px] lg:grid-cols-3 lg:gap-[50px]"
         >
-          <LearningProgressCard :courses="courseList" />
+          <LearningProgressCard v-for="(item, index) in courseList" :key="index" :course="item" />
         </div>
         <div class="content-1-footer self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]">
           <button>
@@ -184,7 +182,7 @@ const coursesRecommended = ref([
           </button>
           <button>
             <img
-              class="bg-[rgba(73,187,189,1)] py-[11px] px-[20px]"
+              class="bg-primary py-[11px] px-[20px]"
               src="../assets/img/Icon/angle-right.png"
               alt=""
             />
@@ -199,10 +197,8 @@ const coursesRecommended = ref([
           Choice favourite course from top category
         </p>
       </div>
-      <div
-        class="content-2-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[80px] mb-[50px] lg:mb-[100px]"
-      >
-        <CategoryCard :courses="courseCategory"></CategoryCard>
+      <div class="content-2-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[80px]">
+        <CategoryCard v-for="(item, index) in courseCategory" :key="index" :course="item" />
       </div>
     </div>
     <!-- Content 3 -->
@@ -210,14 +206,16 @@ const coursesRecommended = ref([
       <div class="container flex flex-col">
         <div class="content-3-header pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">Recommended for you</p>
-          <button class="text-[rgba(73,187,189,1)] font-bold text-[15px] lg:text-[20px]">
-            See all
-          </button>
+          <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
         <div
           class="content-3-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]"
         >
-          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
+          <RecommendedCourseCard
+            v-for="(item, index) in coursesRecommended"
+            :key="index"
+            :course="item"
+          />
         </div>
         <div
           class="content-3-footer pb-[113px] self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]"
@@ -236,14 +234,16 @@ const coursesRecommended = ref([
       <div class="content-4 flex flex-col">
         <div class="content-4-header pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">Get choice of your course</p>
-          <button class="text-[rgba(73,187,189,1)] font-bold text-[15px] lg:text-[20px]">
-            See all
-          </button>
+          <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
         <div
           class="content-4-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
         >
-          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
+          <RecommendedCourseCard
+            v-for="(item, index) in coursesRecommended"
+            :key="index"
+            :course="item"
+          />
         </div>
       </div>
     </div>
@@ -256,14 +256,16 @@ const coursesRecommended = ref([
       <div class="content-6 flex flex-col">
         <div class="content-6-header pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">The course in personal development</p>
-          <button class="text-[rgba(73,187,189,1)] font-bold text-[15px] lg:text-[20px]">
-            See all
-          </button>
+          <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
         <div
           class="content-6-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
         >
-          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
+          <RecommendedCourseCard
+            v-for="(item, index) in coursesRecommended"
+            :key="index"
+            :course="item"
+          />
         </div>
       </div>
     </div>
@@ -272,14 +274,16 @@ const coursesRecommended = ref([
       <div class="container flex flex-col">
         <div class="content-7-header pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">Student are viewing</p>
-          <button class="text-[rgba(73,187,189,1)] font-bold text-[15px] lg:text-[20px]">
-            See all
-          </button>
+          <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
         <div
           class="content-7-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
         >
-          <RecommendedCourseCard :courses="coursesRecommended"></RecommendedCourseCard>
+          <RecommendedCourseCard
+            v-for="(item, index) in coursesRecommended"
+            :key="index"
+            :course="item"
+          />
         </div>
       </div>
     </div>

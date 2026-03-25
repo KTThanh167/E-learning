@@ -7,7 +7,7 @@
 
       <h2 class="relative z-10 text-[36px] lg:text-[44px] font-medium text-[rgba(47,50,125,1)]">
         Everything you can do in a physical classroom,
-        <span class="text-[rgba(73,187,189,1)]">you can do with TOTC</span>
+        <span class="text-primary">you can do with TOTC</span>
       </h2>
 
       <p class="mt-6 text-[18px] text-[#696984] max-w-[550px]">

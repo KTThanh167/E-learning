@@ -22,7 +22,7 @@ import bgImg from '../../assets/img/Home/related-blog-01.png'
       <p>{{ props.instructor.text }}</p>
     </div>
     <!-- title -->
-    <div class="relative z-10 line-clamp-1">
+    <div class="relative z-10 line-clamp-2 min-h-[100px]">
       <p class="font-semibold text-[32px] text-white">{{ props.instructor.title }}</p>
     </div>
     <!-- desc -->

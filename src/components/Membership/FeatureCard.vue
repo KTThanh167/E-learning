@@ -12,7 +12,7 @@
       <slot name="desc"></slot>
     </div>
     <button
-      class="mt-[50px] px-[40px] py-[15px] bg-[rgba(73,187,189,1)] w-max rounded-[12px] text-white self-end hover:scale-105 transition duration-500 ease-in-out"
+      class="mt-[50px] px-[40px] py-[15px] bg-primary w-max rounded-[12px] text-white self-end hover:scale-105 transition duration-500 ease-in-out"
     >
       <slot name="button"></slot>
     </button>

@@ -101,9 +101,7 @@ const coaching = ref({
     <div class="container">
       <div class="content-1 flex flex-col items-center pt-[150px]">
         <div class="content-1-title">
-          <p class="font-extrabold text-[rgba(73,187,189,1)] text-[32px] lg:text-[64px]">
-            Affordable pricing
-          </p>
+          <p class="font-extrabold text-primary text-[32px] lg:text-[64px]">Affordable pricing</p>
         </div>
         <div class="content-1-body flex flex-col lg:flex-row mt-[77px] gap-[15px] lg:gap-[30px]">
           <!-- Card 1 -->
@@ -200,7 +198,7 @@ const coaching = ref({
           <!-- content-4-1 body -->
           <div class="relative">
             <button
-              class="bg-[rgba(73,187,189,1)] w-[50px] h-[50px] flex items-center justify-center rounded-[25px] absolute left-1/2 top-0 translate-y-1/2 lg:left-0 lg:top-1/2 lg:-translate-y-1/2 -translate-x-1/2 z-10"
+              class="bg-primary w-[50px] h-[50px] flex items-center justify-center rounded-[25px] absolute left-1/2 top-0 translate-y-1/2 lg:left-0 lg:top-1/2 lg:-translate-y-1/2 -translate-x-1/2 z-10"
             >
               <!-- <img src="../img/angle-left.png" alt="" /> -->
               <picture>
@@ -210,7 +208,7 @@ const coaching = ref({
             </button>
 
             <button
-              class="bg-[rgba(73,187,189,1)] w-[50px] h-[50px] flex items-center justify-center rounded-[25px] absolute right-1/2 bottom-0 translate-y-1/2 lg:right-0 lg:top-1/2 lg:-translate-y-1/2 translate-x-1/2 z-10"
+              class="bg-primary w-[50px] h-[50px] flex items-center justify-center rounded-[25px] absolute right-1/2 bottom-0 translate-y-1/2 lg:right-0 lg:top-1/2 lg:-translate-y-1/2 translate-x-1/2 z-10"
             >
               <!-- <img src="../img/angle-right.png" alt="" /> -->
               <picture>
@@ -259,7 +257,7 @@ const coaching = ref({
                 </div>
               </button>
               <button
-                class="text-white px-[13px] py-[7px] lg:px-[60px] lg:py-[14px] bg-[rgba(73,187,189,1)] rounded-[12px]"
+                class="text-white px-[13px] py-[7px] lg:px-[60px] lg:py-[14px] bg-primary rounded-[12px]"
               >
                 <div class="flex items-center gap-[10px]">
                   <img src="../img/ios-icon.png" alt="" /><span
