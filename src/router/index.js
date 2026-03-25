@@ -5,6 +5,7 @@ import RegisterView from '@/views/RegisterView.vue'
 import CourseView from '@/views/CourseView.vue'
 import MembershipView from '@/views/MembershipView.vue'
 import CourseDetailView from '@/views/CourseDetailView.vue'
+import SearchView from '@/views/SearchView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/coursedetail',
       name: 'coursedetail',
       component: CourseDetailView,
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: SearchView,
     },
   ],
 })
