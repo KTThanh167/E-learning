@@ -11,6 +11,7 @@ import UserAvt from '../assets/img/Avatar/user-avatar.png'
 import ClassroomPreview from '@/components/CourseDetail/ClassroomPreview.vue'
 import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
 import TheFooter from '@/components/Layout/TheFooter.vue'
+import RelatedBlog01 from '../assets/img/Home/related-blog-01.png'
 
 const coursesRecommended = ref([
   {
@@ -57,11 +58,13 @@ const coursesRecommended = ref([
 
 const instructors = ref([
   {
+    bgImg: RelatedBlog01,
     text: '50%',
     title: 'FOR INSTRUCTORS FOR INSTRUCTORS FOR INSTRUCTORS',
     desc: 'TOTC’s school management software helps traditional and online schools manage scheduling,',
   },
   {
+    bgImg: RelatedBlog01,
     text: '50%',
     title: 'FOR INSTRUCTORS',
     desc: 'TOTC’s school management software helps traditional and online schools manage scheduling, TOTC’s school management software helps traditional and online schools manage scheduling,',
@@ -116,7 +119,7 @@ const instructors = ref([
       <p class="font-medium text-[30px]">Top Education offers and deals are listed here</p>
       <button class="text-primary font-bold text-[20px]">See all</button>
     </div>
-    <div class="flex flex-col lg:flex-row gap-[30px] pb-[200px]">
+    <div class="flex flex-col lg:flex-row gap-[30px] pb-[200px] pt-[64px]">
       <div class="flex-1" v-for="(instructor, index) in instructors" :key="index">
         <TopEducationCard :instructor="instructor" />
       </div>

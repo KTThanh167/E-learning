@@ -3,23 +3,27 @@ const props = defineProps({
   instructor: {
     type: Object,
   },
+  badgeClass: {
+    type: String,
+    default: 'bg-[rgba(255,0,0,0.6)]',
+  },
 })
-import bgImg from '../../assets/img/Home/related-blog-01.png'
 </script>
 
 <template>
   <div
-    class="relative mt-[64px] bg-cover bg-center flex flex-col gap-[30px] p-[50px] rounded-[20px] h-full"
+    class="relative bg-cover bg-center flex flex-col gap-[30px] p-[50px] rounded-[20px] h-full max-w-[250]"
     :style="{
-      backgroundImage: `url(${bgImg})`,
+      backgroundImage: `url(${props.instructor.bgImg})`,
     }"
   >
-    <div class="absolute inset-0 bg-[rgba(23,27,65,0.5)] opacity-60 rounded-[20px]"></div>
+    <div class="absolute inset-0 bg-[rgba(23,27,65,0.5)] rounded-[20px]"></div>
     <!-- discount -->
     <div
-      class="max-w-[100px] max-h-[100px] bg-[rgba(255,0,0,0.6)] px-[20px] py-[35px] text-white rounded-[12px] text-center relative z-10"
+      class="max-w-[124px] max-h-[124px] px-[8px] py-[25px] text-white rounded-[12px] text-center relative z-10"
+      :class="props.badgeClass"
     >
-      <p>{{ props.instructor.text }}</p>
+      <p class="font-bold text-[50px]">{{ props.instructor.text }}</p>
     </div>
     <!-- title -->
     <div class="relative z-10 line-clamp-2 min-h-[100px]">
