@@ -16,6 +16,7 @@ import CreatorCard from '@/components/Search/CreatorCard.vue'
 import Creator01 from '../assets/img/Search/creator-01.png'
 import Creator02 from '../assets/img/Search/creator-02.png'
 import Creator03 from '../assets/img/Search/creator-03.png'
+import StudentsSay from '@/components/Search/StudentsSay.vue'
 const platform = ref({
   title: 'Know about learning learning platform',
 })
@@ -107,6 +108,12 @@ const creators = ref([
     desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
   },
 ])
+
+const student = ref({
+  name: 'Savannah Nguyen',
+  email: 'tanya.hill@example.com',
+  say: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod temporLorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
+})
 </script>
 
 <template>
@@ -161,6 +168,12 @@ const creators = ref([
         :creator="item"
         class="mt-[150px]"
       />
+    </div>
+  </div>
+  <!-- students say -->
+  <div class="bg-[rgba(157,204,255,0.2)]">
+    <div class="container">
+      <StudentsSay :student="student" />
     </div>
   </div>
 </template>
