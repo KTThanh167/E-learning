@@ -25,7 +25,7 @@ const buttonClass = computed(() => {
       return ['bg-white', 'text-red-500', 'text-[12px] lg:text-[24px]']
 
     default:
-      return ['bg-white', 'text-[rgba(73,187,189,1)]', 'text-[9px] lg:text-[18px]']
+      return ['bg-white', 'text-primary', 'text-[9px] lg:text-[18px]']
   }
 })
 </script>
@@ -39,7 +39,7 @@ const buttonClass = computed(() => {
         : '',
     ]"
   >
-    <div class="text-[rgba(73,187,189,1)] font-bold text-[9px] lg:text-[18px] flex justify-between">
+    <div class="text-primary font-bold text-[9px] lg:text-[18px] flex justify-between">
       <slot name="title"></slot>
       <div
         v-if="$slots.badge"

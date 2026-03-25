@@ -18,9 +18,7 @@
           type="text"
           placeholder="Your Email"
         />
-        <button class="bg-[rgba(73,187,189,1)] px-[34px] py-[14px] rounded-[60px] text-white">
-          Subscribe
-        </button>
+        <button class="bg-primary px-[34px] py-[14px] rounded-[60px] text-white">Subscribe</button>
       </div>
     </div>
     <div class="footer-link mt-[95px] flex flex-col items-center">

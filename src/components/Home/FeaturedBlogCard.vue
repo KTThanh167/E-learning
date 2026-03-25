@@ -20,7 +20,7 @@
     <div class="card-footer">
       <p class="text-[rgba(105,105,132,1)] underline cursor-pointer">Read more</p>
       <div class="card-footer-right">
-        <div class="text-[rgba(73,187,189,1)]"><font-awesome-icon icon="eye" /></div>
+        <div class="text-primary"><font-awesome-icon icon="eye" /></div>
         <div class="text-[rgba(105,105,132,1)]"><slot name="views"></slot></div>
       </div>
     </div>

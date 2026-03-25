@@ -7,6 +7,14 @@ import starImg from '../../assets/img/Icon/five-star.png'
 const activeIndex = ref(0)
 const buttons = ['Overview', 'Overview', 'Overview', 'Overview']
 
+const courseRatings = ref([
+  { stars: 5, percentage: 85 },
+  { stars: 4, percentage: 10 },
+  { stars: 3, percentage: 5 },
+  { stars: 2, percentage: 0 },
+  { stars: 1, percentage: 0 },
+])
+
 const users = ref([
   {
     avt: userAvt,
@@ -34,7 +42,7 @@ const users = ref([
         @click="activeIndex = index"
         :class="[
           activeIndex === index
-            ? 'bg-[rgba(73,187,189,1)] text-white'
+            ? 'bg-primary text-white'
             : 'bg-[rgba(0,0,0,0.1)] text-[rgba(0,0,0,0.4)]',
         ]"
         class="flex-1 rounded-[12px] py-[16px] font-bold text-center transition-all"
@@ -53,7 +61,7 @@ const users = ref([
           <p class="text-gray-500 font-normal">Top Rating</p>
         </div>
 
-        <RatingProgress class="flex-1 w-full" />
+        <RatingProgress :ratings="courseRatings" class="flex-1 w-full" />
       </div>
 
       <div class="mt-[24px]" v-for="(user, index) in users" :key="index">

@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import TheHeader from '@/components/Layout/TheHeader.vue'
 import bgImg from '../assets/img/Course/banner.png'
 import CourseOverview from '@/components/CourseDetail/CourseOverview.vue'
-import CourseSideBar from '@/components/CourseDetail/CourseSideBar.vue'
+import CourseSideBar from '@/components/CourseDetail/CourseSidebar.vue'
 import CourseContent3Card from '@/components/Course/RecommendedCourseCard.vue'
 import CourseContent3Img1 from '../assets/img/Home/marketing-articles-01.png'
 import CourseContent3Img2 from '../assets/img/Home/marketing-articles-02.png'
@@ -58,7 +58,7 @@ const coursesRecommended = ref([
 const instructors = ref([
   {
     text: '50%',
-    title: 'FOR INSTRUCTORS',
+    title: 'FOR INSTRUCTORS FOR INSTRUCTORS FOR INSTRUCTORS',
     desc: 'TOTC’s school management software helps traditional and online schools manage scheduling,',
   },
   {
@@ -93,9 +93,7 @@ const instructors = ref([
     <div class="container flex flex-col">
       <div class="content-3-header pt-[50px] lg:pt-[100px] flex justify-between">
         <p class="font-medium text-[20px] lg:text-[30px]">Marketing Articles</p>
-        <button class="text-[rgba(73,187,189,1)] font-bold text-[15px] lg:text-[20px]">
-          See all
-        </button>
+        <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
       </div>
       <div
         class="content-3-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]"
@@ -112,7 +110,7 @@ const instructors = ref([
   <div class="container">
     <div class="flex justify-between">
       <p class="font-medium text-[30px]">Top Education offers and deals are listed here</p>
-      <button class="text-[rgba(73,187,189,1)] font-bold text-[20px]">See all</button>
+      <button class="text-primary font-bold text-[20px]">See all</button>
     </div>
     <div class="flex flex-col lg:flex-row gap-[30px] pb-[200px]">
       <div class="flex-1" v-for="(instructor, index) in instructors" :key="index">

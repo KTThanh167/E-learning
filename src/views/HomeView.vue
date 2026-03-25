@@ -21,7 +21,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
       <div class="container md:flex gap-[50px]">
         <div class="content-1-left flex-1">
           <p class="text-[20px] md:text-[25px] lg:text-[40px]">
-            By Themadbrains in <span class="text-[rgba(73,187,189,1)]">inspiration</span>
+            By Themadbrains in <span class="text-primary">inspiration</span>
           </p>
           <p
             class="text-[rgba(47,50,125,1)] text-[20px] md:text-[25px] lg:text-[40px] font-semibold pt-[12px] lg:pt-[24px]"
@@ -122,7 +122,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
         <div class="content-3-title flex justify-between pb-10">
           <p class="text-[15px] md:text-[23px] lg:text-[30px] font-medium">Related Blog</p>
           <button
-            class="text-[rgba(73,187,189,1)] font-bold text-[10px] md:text-[15px] lg:text-[20px] hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+            class="text-primary font-bold text-[10px] md:text-[15px] lg:text-[20px] hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
           >
             See all
           </button>
@@ -204,7 +204,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
             <font-awesome-icon icon="angle-left" />
           </button>
           <button
-            class="text-[rgba(255,255,255,1)] bg-[rgba(73,187,189,1)] px-5 py-3 hover:scale-105 transition duration-500 ease-in-out"
+            class="text-[rgba(255,255,255,1)] bg-primary px-5 py-3 hover:scale-105 transition duration-500 ease-in-out"
           >
             <font-awesome-icon icon="angle-right" />
           </button>
@@ -218,7 +218,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
           <div class="content-4-title flex justify-between">
             <p class="text-[15px] md:text-[23px] lg:text-[30px] font-medium">Marketing Articles</p>
             <button
-              class="text-[rgba(73,187,189,1)] font-bold text-[10px] md:text-[15px] lg:text-[20px] hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
+              class="text-primary font-bold text-[10px] md:text-[15px] lg:text-[20px] hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
             >
               See all
             </button>
@@ -272,7 +272,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               </p>
             </template>
             <template #new-price>
-              <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
+              <p class="font-bold text-primary text-[12px] lg:text-[24px]">$80</p>
             </template>
           </MarketingContentCard>
           <!-- Card 2 -->
@@ -321,7 +321,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               </p>
             </template>
             <template #new-price>
-              <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
+              <p class="font-bold text-primary text-[12px] lg:text-[24px]">$80</p>
             </template>
           </MarketingContentCard>
           <!-- Card 3 -->
@@ -369,7 +369,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               </p>
             </template>
             <template #new-price>
-              <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
+              <p class="font-bold text-primary text-[12px] lg:text-[24px]">$80</p>
             </template>
           </MarketingContentCard>
           <!-- Card 4 -->
@@ -417,7 +417,7 @@ import TheFooter from '../components/Layout/TheFooter.vue'
               </p>
             </template>
             <template #new-price>
-              <p class="font-bold text-[rgba(73,187,189,1)] text-[12px] lg:text-[24px]">$80</p>
+              <p class="font-bold text-primary text-[12px] lg:text-[24px]">$80</p>
             </template>
           </MarketingContentCard>
         </div>

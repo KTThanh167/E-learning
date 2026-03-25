@@ -18,7 +18,7 @@ const props = defineProps({
       {{ props.coaching.desc }}
     </p>
     <button
-      class="text-white px-[40px] py-[20px] bg-[rgba(73,187,189,1)] mt-[70px] rounded-[12px] mb-[80px] hover:scale-105 transition duration-700 ease-in-out"
+      class="text-white px-[40px] py-[20px] bg-primary mt-[70px] rounded-[12px] mb-[80px] hover:scale-105 transition duration-700 ease-in-out"
     >
       {{ props.coaching.button }}
     </button>

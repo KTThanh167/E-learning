@@ -65,10 +65,8 @@ const time = ref('11 hours left at this price')
           </p>
           <p class="text-[rgba(0,0,0,0.5)] font-semibold text-[28px]">{{ price.discount }}</p>
         </div>
-        <p class="text-[rgba(73,187,189,1)] font-semibold text-[20px] text-center">{{ time }}</p>
-        <button
-          class="bg-[rgba(73,187,189,1)] py-[17px] text-white font-bold text-[20px] rounded-[12px]"
-        >
+        <p class="text-primary font-semibold text-[20px] text-center">{{ time }}</p>
+        <button class="bg-primary py-[17px] text-white font-bold text-[20px] rounded-[12px]">
           Buy now
         </button>
       </div>
