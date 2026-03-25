@@ -4,7 +4,7 @@ import TheHeader from '@/components/Layout/TheHeader.vue'
 import bgImg from '../assets/img/Course/banner.png'
 import CourseOverview from '@/components/CourseDetail/CourseOverview.vue'
 import CourseSideBar from '@/components/CourseDetail/CourseSidebar.vue'
-import CourseContent3Card from '@/components/Course/RecommendedCourseCard.vue'
+import RecommendedCourseCard from '@/components/Course/RecommendedCourseCard.vue'
 import CourseContent3Img1 from '../assets/img/Home/marketing-articles-01.png'
 import CourseContent3Img2 from '../assets/img/Home/marketing-articles-02.png'
 import UserAvt from '../assets/img/Avatar/user-avatar.png'
@@ -98,7 +98,11 @@ const instructors = ref([
       <div
         class="content-3-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]"
       >
-        <CourseContent3Card :courses="coursesRecommended"></CourseContent3Card>
+        <RecommendedCourseCard
+          v-for="(item, index) in coursesRecommended"
+          :key="index"
+          :course="item"
+        />
       </div>
     </div>
   </div>
