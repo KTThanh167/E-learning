@@ -17,6 +17,12 @@ import Creator01 from '../assets/img/Search/creator-01.png'
 import Creator02 from '../assets/img/Search/creator-02.png'
 import Creator03 from '../assets/img/Search/creator-03.png'
 import StudentsSay from '@/components/Search/StudentsSay.vue'
+import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
+import TopEducation01 from '../assets/img/Search/top-education-01.png'
+import TopEducation02 from '../assets/img/Search/top-education-02.png'
+import TopEducation03 from '../assets/img/Search/top-education-03.png'
+import TheFooter from '@/components/Layout/TheFooter.vue'
+
 const platform = ref({
   title: 'Know about learning learning platform',
 })
@@ -114,6 +120,27 @@ const student = ref({
   email: 'tanya.hill@example.com',
   say: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod temporLorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
 })
+
+const instructors = ref([
+  {
+    bgImg: TopEducation01,
+    text: '50%',
+    title: 'FOR INSTRUCTORS FOR INSTRUCTORS FOR INSTRUCTORS',
+    desc: 'TOTC’s school management software helps traditional and online schools manage scheduling,',
+  },
+  {
+    bgImg: TopEducation02,
+    text: '50%',
+    title: 'FOR INSTRUCTORS',
+    desc: 'TOTC’s school management software helps traditional and online schools manage scheduling, TOTC’s school management software helps traditional and online schools manage scheduling,',
+  },
+  {
+    bgImg: TopEducation03,
+    text: '50%',
+    title: 'FOR INSTRUCTORS',
+    desc: 'TOTC’s school management software helps traditional and online schools manage scheduling, TOTC’s school management software helps traditional and online schools manage scheduling,',
+  },
+])
 </script>
 
 <template>
@@ -176,4 +203,23 @@ const student = ref({
       <StudentsSay :student="student" />
     </div>
   </div>
+  <!-- Top education -->
+  <div class="container">
+    <!-- header -->
+    <div class="flex justify-between pt-[70px] pb-[70px]">
+      <p class="font-medium text-[30px]">Top Education offers and deals are listed here</p>
+      <button class="text-primary font-bold text-[20px]">See all</button>
+    </div>
+    <!-- content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[70px] pb-[80px]">
+      <TopEducationCard
+        v-for="(item, index) in instructors"
+        :key="index"
+        :instructor="item"
+        badgeClass="bg-primary"
+      />
+    </div>
+  </div>
+  <!-- Footer -->
+  <TheFooter />
 </template>

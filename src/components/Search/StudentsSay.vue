@@ -11,7 +11,7 @@ const props = defineProps({
 <template>
   <div class="pt-[70px] pb-[80px]">
     <p class="text-[30px] font-medium pb-[70px]">What our students have to say</p>
-    <div class="bg-white rounded-[40px] pt-[40px] px-[50px] flex gap-[50px]">
+    <div class="bg-white rounded-[40px] pt-[40px] px-[50px] flex flex-col lg:flex-row gap-[50px]">
       <img src="../../assets/img/Search/students-say-banner.png" class="max-w-[500px]" alt="" />
       <div>
         <div>
