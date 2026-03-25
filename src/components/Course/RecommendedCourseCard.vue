@@ -21,11 +21,11 @@ const props = defineProps({
     </div>
     <div class="flex items-center justify-between mt-[20px]">
       <div class="design flex items-center gap-[10px]">
-        <img src="../../img/design-icon.png" alt="" />
+        <img src="../../assets/img/Icon/design.png" alt="" />
         <p class="text-[rgba(105,105,132,1)] font-medium text-[14px]">Design</p>
       </div>
       <div class="time flex items-center gap-[10px]">
-        <img src="../../img/time-icon.png" alt="" />
+        <img src="../../assets/img/Icon/time.png" alt="" />
         <p class="text-[rgba(105,105,132,1)] font-medium text-[14px]">{{ props.course.time }}</p>
       </div>
     </div>
