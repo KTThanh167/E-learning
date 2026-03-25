@@ -15,7 +15,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="bg-[rgba(157,204,255,0.2)] rounded-[20px] flex items-center justify-center mt-[65px] min-h-[540px] gap-[150px]"
+    class="bg-[rgba(157,204,255,0.2)] rounded-[20px] flex flex-col lg:flex-row items-center justify-center mt-[65px] min-h-[540px] gap-[150px]"
   >
     <!-- Information platform -->
     <div class="pl-[80px]">
@@ -42,7 +42,7 @@ const props = defineProps({
     <img
       src="../../assets/img/Search/learning-platform.png"
       alt=""
-      class="max-w-[600px] object-contain overflow-hidden"
+      class="lg:max-w-[600px] max-w-[300px] object-contain overflow-hidden"
     />
   </div>
 </template>
