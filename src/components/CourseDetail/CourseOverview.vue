@@ -1,43 +1,30 @@
 <script setup>
 import { ref } from 'vue'
 import RatingProgress from './RatingProgress.vue'
-import userAvt from '../../assets/img/Avatar/heading-avatar.png'
 import starImg from '../../assets/img/Icon/five-star.png'
 
+const props = defineProps({
+  buttons: {
+    type: Array,
+    default: () => [],
+  },
+  courseRatings: {
+    type: Array,
+    default: () => [],
+  },
+  users: {
+    type: Array,
+    default: () => [],
+  },
+})
 const activeIndex = ref(0)
-const buttons = ['Overview', 'Overview', 'Overview', 'Overview']
-
-const courseRatings = ref([
-  { stars: 5, percentage: 85 },
-  { stars: 4, percentage: 10 },
-  { stars: 3, percentage: 5 },
-  { stars: 2, percentage: 0 },
-  { stars: 1, percentage: 0 },
-])
-
-const users = ref([
-  {
-    avt: userAvt,
-    name: 'Lina',
-    star: starImg,
-    time: '3 Months',
-    cmt: 'Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively',
-  },
-  {
-    avt: userAvt,
-    name: 'Lina',
-    star: starImg,
-    time: '3 Months',
-    cmt: 'Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively',
-  },
-])
 </script>
 
 <template>
   <div class="mt-[40px] flex flex-col w-full max-w-[650px] mx-auto">
     <div class="flex flex-row gap-4 lg:gap-[30px] w-full">
       <button
-        v-for="(item, index) in buttons"
+        v-for="(item, index) in props.buttons"
         :key="index"
         @click="activeIndex = index"
         :class="[
@@ -61,10 +48,10 @@ const users = ref([
           <p class="text-gray-500 font-normal">Top Rating</p>
         </div>
 
-        <RatingProgress :ratings="courseRatings" class="flex-1 w-full" />
+        <RatingProgress :ratings="props.courseRatings" class="flex-1 w-full" />
       </div>
 
-      <div class="mt-[24px]" v-for="(user, index) in users" :key="index">
+      <div class="mt-[24px]" v-for="(user, index) in props.users" :key="index">
         <div class="flex justify-between items-center">
           <div class="flex gap-[15px] items-center">
             <img :src="user.avt" alt="avatar" class="w-12 h-12 rounded-full" />

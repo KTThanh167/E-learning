@@ -45,7 +45,14 @@ const handleShowDesc = (index) => {
           <p class="font-extrabold text-primary text-[32px] lg:text-[64px]">Affordable pricing</p>
         </div>
         <div class="flex flex-col lg:flex-row mt-[77px] gap-[15px] lg:gap-[30px]">
-          <PricingSection v-for="(plan, index) in pricingList" :key="index" v-bind="plan" />
+          <PricingSection
+            v-for="(plan, index) in pricingList"
+            :key="index"
+            :card="plan"
+            :benefits="plan.benefits"
+            :buttonType="plan.buttonType"
+            :highlight="plan.highlight"
+          />
         </div>
       </div>
     </div>

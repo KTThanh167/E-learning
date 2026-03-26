@@ -10,7 +10,7 @@ const props = defineProps({
 
 <template>
   <div class="flex flex-col gap-[12px] w-full">
-    <div v-for="item in props.ratings" :key="item.stars" class="flex items-center gap-[45px]">
+    <div v-for="(item, index) in props.ratings" :key="index" class="flex items-center gap-[45px]">
       <span class="text-[20px] font-normal text-[rgba(0,0,0,0.5)]"> {{ item.stars }} Stars </span>
 
       <div class="flex-1 h-2 bg-[rgba(217,217,217,1)] rounded-[2px]">

@@ -2,11 +2,10 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  title: String,
-  price: String,
-  time: String,
-  buttonText: String,
-  badge: String,
+  card: {
+    type: Object,
+    default: () => {},
+  },
   benefits: {
     type: Array,
     default: () => [],
@@ -44,19 +43,19 @@ const buttonClass = computed(() => {
   >
     <!-- Header -->
     <div class="text-primary font-bold text-[9px] lg:text-[18px] flex justify-between">
-      <span>{{ title }}</span>
+      <span>{{ card.title }}</span>
 
       <div
-        v-if="badge"
+        v-if="card.badge"
         class="text-[6px] lg:text-[12px] border p-2 rounded-[99px] border-[rgba(108,92,231,1)]"
       >
-        {{ badge }}
+        {{ card.badge }}
       </div>
     </div>
     <!-- Price -->
     <div class="font-bold text-[24px] lg:text-[48px]">
-      {{ price }}
-      <span class="font-extrabold text-[6px] lg:text-[12px]">{{ time }}</span>
+      {{ card.price }}
+      <span class="font-extrabold text-[6px] lg:text-[12px]">{{ card.time }}</span>
     </div>
     <!-- Benefits -->
     <div class="flex flex-col gap-2 lg:gap-4 mt-3 lg:mt-6 flex-1">
@@ -74,7 +73,7 @@ const buttonClass = computed(() => {
         'mt-2 lg:mt-4 py-2 px-4 rounded-[16px] font-bold hover:scale-105 transition duration-300',
       ]"
     >
-      {{ buttonText }}
+      {{ card.buttonText }}
     </button>
   </div>
 </template>

@@ -64,7 +64,7 @@ const coursesRecommendedList = ref(coursesRecommended)
           Choice favourite course from top category
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[80px]">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[80px] pb-[100px]">
         <CategoryCard v-for="(item, index) in courseCategoryList" :key="index" :course="item" />
       </div>
     </div>
