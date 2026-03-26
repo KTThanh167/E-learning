@@ -11,25 +11,18 @@ import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
 import TheFooter from '@/components/Layout/TheFooter.vue'
 // Import Data
 import { creators } from '@/data/Search/Creator'
-const creatorData = ref(creators)
-
-import { infors } from '@/data/Search/LearningPlatform'
-const learningPlatformDataInfors = ref(infors)
-
-import { platform } from '@/data/Search/LearningPlatform'
-const learningPlatformDataPlatform = ref(platform)
-
+const creatorList = ref(creators)
+import { infors, platform } from '@/data/Search/LearningPlatform'
+const platformInfo = ref(infors)
+const platformFeatures = ref(platform)
 import { recommendedCourses } from '@/data/Search/RecommendedCourse'
-const recommendedCourseData = ref(recommendedCourses)
-
+const recommendedCoursesList = ref(recommendedCourses)
 import { student } from '@/data/Search/Student'
-const studentData = ref(student)
-
+const studentReview = ref(student)
 import { instructors } from '@/data/Search/TopEducation'
-const topEducationData = ref(instructors)
-
+const topEducationList = ref(instructors)
 import { filteredCourses } from '@/data/Search/SearchResult'
-const searchResult = ref(filteredCourses)
+const filteredCoursesList = ref(filteredCourses)
 </script>
 
 <template>
@@ -43,14 +36,11 @@ const searchResult = ref(filteredCourses)
   </div>
   <!-- Search result -->
   <div class="container">
-    <SearchResult :courses="searchResult" />
+    <SearchResult :courses="filteredCoursesList" />
   </div>
   <!-- Learning platform -->
   <div class="container">
-    <LearningPlatform
-      :platform="learningPlatformDataPlatform"
-      :infors="learningPlatformDataInfors"
-    />
+    <LearningPlatform :platform="platformFeatures" :infors="platformInfo" />
   </div>
   <!-- Recommended for you -->
   <div class="bg-[rgba(157,204,255,0.2)] mt-[70px] pb-[200px]">
@@ -65,7 +55,7 @@ const searchResult = ref(filteredCourses)
         class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 xl:gap-[50px] gap-[20px] pt-[50px]"
       >
         <RecommendedCourseCard
-          v-for="(item, index) in recommendedCourseData"
+          v-for="(item, index) in recommendedCoursesList"
           :key="index"
           :course="item"
         />
@@ -82,7 +72,7 @@ const searchResult = ref(filteredCourses)
     <!-- real creators list card -->
     <div class="mt-[50px] grid grid-cols-3 gap-[48px] pb-[80px]">
       <CreatorCard
-        v-for="(item, index) in creatorData"
+        v-for="(item, index) in creatorList"
         :key="index"
         :creator="item"
         class="mt-[150px]"
@@ -92,7 +82,7 @@ const searchResult = ref(filteredCourses)
   <!-- students say -->
   <div class="bg-[rgba(157,204,255,0.2)]">
     <div class="container">
-      <StudentsSay :student="studentData" />
+      <StudentsSay :student="studentReview" />
     </div>
   </div>
   <!-- Top education -->
@@ -105,7 +95,7 @@ const searchResult = ref(filteredCourses)
     <!-- content -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[70px] pb-[80px]">
       <TopEducationCard
-        v-for="(item, index) in topEducationData"
+        v-for="(item, index) in topEducationList"
         :key="index"
         :instructor="item"
         badgeClass="bg-primary"
