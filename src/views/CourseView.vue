@@ -1,155 +1,20 @@
 <script setup>
+import { ref } from 'vue'
 import LearningProgressCard from '../components/Course/LearningProgressCard.vue'
 import TheHeader from '../components/Layout/TheHeader.vue'
-import CourseContent1Img from '../assets/img/Course/learning-progress-card-01.png'
-import CourseContent1UserImg from '../assets/img/Course/avatar-user.png'
 import CategoryCard from '../components/Course/CategoryCard.vue'
-import CourseContent2Img1 from '../assets/img/Course/category-card-01.png'
-import CourseContent2Img2 from '../assets/img/Course/category-card-02.png'
-import CourseContent2Img3 from '../assets/img/Course/category-card-03.png'
-import CourseContent2Img4 from '../assets/img/Course/category-card-04.png'
-import CourseContent2Img5 from '../assets/img/Course/category-card-05.png'
-import CourseContent2Img6 from '../assets/img/Course/category-card-06.png'
-import CourseContent2Img7 from '../assets/img/Course/category-card-07.png'
-import CourseContent2Img8 from '../assets/img/Course/category-card-08.png'
-import CourseContent3Img1 from '../assets/img/Home/marketing-articles-01.png'
-import CourseContent3Img2 from '../assets/img/Home/marketing-articles-02.png'
-import UserAvt from '../assets/img/Avatar/user-avatar.png'
-
-import { ref } from 'vue'
 import RecommendedCourseCard from '../components/Course/RecommendedCourseCard.vue'
 import Content2Component from '@/components/Membership/MembershipBanner.vue'
 import TheFooter from '../components/Layout/TheFooter.vue'
-
-const courseList = ref([
-  {
-    img: CourseContent1Img,
-    title: 'AWS Certified Solutions Architect',
-    userImg: CourseContent1UserImg,
-    userName: 'Lina',
-    percent: 70,
-    studiedLesson: 5,
-    totalLesson: 7,
-  },
-  {
-    img: CourseContent1Img,
-    title: 'AWS Certified Solutions Architect',
-    userImg: CourseContent1UserImg,
-    userName: 'Lina',
-    percent: 100,
-    studiedLesson: 7,
-    totalLesson: 7,
-  },
-  {
-    img: CourseContent1Img,
-    title: 'AWS Certified Solutions Architect',
-    userImg: CourseContent1UserImg,
-    userName: 'Lina',
-    percent: 45,
-    studiedLesson: 3,
-    totalLesson: 7,
-  },
-])
-
-const courseCategory = ref([
-  {
-    img: CourseContent2Img1,
-    title: 'Design',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(73,187,189,0.3)]',
-  },
-  {
-    img: CourseContent2Img2,
-    title: 'Development',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(91,114,238,0.3)]',
-  },
-  {
-    img: CourseContent2Img3,
-    title: 'Development',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(157,204,255,0.3)]',
-  },
-  {
-    img: CourseContent2Img4,
-    title: 'Business',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(0,203,184,0.3)]',
-  },
-  {
-    img: CourseContent2Img5,
-    title: 'Marketing',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(244,140,6,0.3)]',
-  },
-  {
-    img: CourseContent2Img6,
-    title: 'Photography',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(238,100,91,0.3)]',
-  },
-  {
-    img: CourseContent2Img7,
-    title: 'Acting',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(37,38,65,0.3)]',
-  },
-  {
-    img: CourseContent2Img8,
-    title: 'Business',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmod',
-    color: 'bg-[rgba(0,203,184,0.3)]',
-  },
-])
-
-const coaching = ref({
-  title: 'Online coaching lessons for remote learning.',
-  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempos Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor',
-  button: 'Start learning now',
-})
-
-const coursesRecommended = ref([
-  {
-    img: CourseContent3Img1,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-  {
-    img: CourseContent3Img2,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-  {
-    img: CourseContent3Img1,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-  {
-    img: CourseContent3Img2,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-])
+//Import data
+import { courseCategory } from '@/data/Course/CategoryCourse'
+import { courseList } from '@/data/Course/LearningProgress'
+import { coaching } from '@/data/Course/OnlineCoaching'
+import { coursesRecommended } from '@/data/Course/RecommendedCourse'
+const courseCategoryList = ref(courseCategory)
+const learningProgressList = ref(courseList)
+const coachingObject = ref(coaching)
+const coursesRecommendedList = ref(coursesRecommended)
 </script>
 
 <template>
@@ -158,21 +23,23 @@ const coursesRecommended = ref([
     <div class="container">
       <TheHeader></TheHeader>
     </div>
-    <!-- Content 1 -->
-    <div class="content-1 bg-[rgba(157,204,255,0.2)] pt-[25px] pb-[28px] lg:pt-[50px] lg:pb-[57px]">
+    <!-- LearningProgress -->
+    <div class="bg-[rgba(157,204,255,0.2)] pt-[25px] pb-[28px] lg:pt-[50px] lg:pb-[57px]">
       <div class="container flex flex-col">
-        <div class="content-1-header flex justify-between">
+        <div class="flex justify-between">
           <p class="font-semibold text-[rgba(37,38,65,1)] text-[18px] lg:text-[36px]">
             Welcome back, ready for your next lesson?
           </p>
           <button class="text-primary font-bold text-[10px] lg:text-[20px]">View history</button>
         </div>
-        <div
-          class="content-1-body pt-[25px] lg:pt-[50px] grid gap-[15px] lg:grid-cols-3 lg:gap-[50px]"
-        >
-          <LearningProgressCard v-for="(item, index) in courseList" :key="index" :course="item" />
+        <div class="pt-[25px] lg:pt-[50px] grid gap-[15px] lg:grid-cols-3 lg:gap-[50px]">
+          <LearningProgressCard
+            v-for="(item, index) in learningProgressList"
+            :key="index"
+            :course="item"
+          />
         </div>
-        <div class="content-1-footer self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]">
+        <div class="self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]">
           <button>
             <img
               class="bg-[rgba(73,187,189,0.5)] py-[11px] px-[20px]"
@@ -190,36 +57,32 @@ const coursesRecommended = ref([
         </div>
       </div>
     </div>
-    <!-- Content 2 -->
+    <!-- Category course -->
     <div class="container">
-      <div class="content-2-header pt-[40px] lg:pt-[80px]">
+      <div class="pt-[40px] lg:pt-[80px]">
         <p class="text-[rgba(37,38,65,1)] font-semibold text-[20px] lg:text-[36px]">
           Choice favourite course from top category
         </p>
       </div>
-      <div class="content-2-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[80px]">
-        <CategoryCard v-for="(item, index) in courseCategory" :key="index" :course="item" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[80px]">
+        <CategoryCard v-for="(item, index) in courseCategoryList" :key="index" :course="item" />
       </div>
     </div>
-    <!-- Content 3 -->
-    <div class="content-3 bg-[rgba(157,204,255,0.2)]">
+    <!-- Recommended course -->
+    <div class="bg-[rgba(157,204,255,0.2)]">
       <div class="container flex flex-col">
-        <div class="content-3-header pt-[50px] lg:pt-[100px] flex justify-between">
+        <div class="pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">Recommended for you</p>
           <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
-        <div
-          class="content-3-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommended"
+            v-for="(item, index) in coursesRecommendedList"
             :key="index"
             :course="item"
           />
         </div>
-        <div
-          class="content-3-footer pb-[113px] self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]"
-        >
+        <div class="pb-[113px] self-end pt-[25px] lg:pt-[50px] flex gap-[10px] lg:gap-[20px]">
           <button class="bg-[rgba(73,187,189,0.5)] py-[11px] px-[20px]">
             <img src="../assets/img/Icon/angle-left.png" alt="" />
           </button>
@@ -229,58 +92,52 @@ const coursesRecommended = ref([
         </div>
       </div>
     </div>
-    <!-- Content 4 -->
+    <!-- Choice your course -->
     <div class="container">
-      <div class="content-4 flex flex-col">
-        <div class="content-4-header pt-[50px] lg:pt-[100px] flex justify-between">
+      <div class="flex flex-col">
+        <div class="pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">Get choice of your course</p>
           <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
-        <div
-          class="content-4-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommended"
+            v-for="(item, index) in coursesRecommendedList"
             :key="index"
             :course="item"
           />
         </div>
       </div>
     </div>
-    <!-- Content 5 -->
+    <!-- Online coaching -->
     <div class="container">
-      <Content2Component :coaching="coaching"></Content2Component>
+      <Content2Component :coaching="coachingObject"></Content2Component>
     </div>
-    <!-- Content 6 -->
+    <!-- development course -->
     <div class="container">
-      <div class="content-6 flex flex-col">
-        <div class="content-6-header pt-[50px] lg:pt-[100px] flex justify-between">
+      <div class="flex flex-col">
+        <div class="pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">The course in personal development</p>
           <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
-        <div
-          class="content-6-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommended"
+            v-for="(item, index) in coursesRecommendedList"
             :key="index"
             :course="item"
           />
         </div>
       </div>
     </div>
-    <!-- Content 7 -->
-    <div class="content-7 bg-[rgba(157,204,255,0.2)]">
+    <!-- student viewing -->
+    <div class="bg-[rgba(157,204,255,0.2)]">
       <div class="container flex flex-col">
-        <div class="content-7-header pt-[50px] lg:pt-[100px] flex justify-between">
+        <div class="pt-[50px] lg:pt-[100px] flex justify-between">
           <p class="font-medium text-[20px] lg:text-[30px]">Student are viewing</p>
           <button class="text-primary font-bold text-[15px] lg:text-[20px]">See all</button>
         </div>
-        <div
-          class="content-7-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommended"
+            v-for="(item, index) in coursesRecommendedList"
             :key="index"
             :course="item"
           />
