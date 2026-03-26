@@ -2,8 +2,8 @@
 const props = defineProps({
   creator: {
     type: Object,
-    required: true,
-    default: () => {},
+    required: false,
+    default: () => ({}),
   },
 })
 </script>
