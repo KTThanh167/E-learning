@@ -2,30 +2,33 @@
 import { computed } from 'vue'
 
 const props = defineProps({
+  title: String,
+  price: String,
+  time: String,
+  buttonText: String,
+  badge: String,
   benefits: {
     type: Array,
+    default: () => [],
   },
   buttonType: {
     type: String,
-    default: null,
+    default: 'default',
   },
   highlight: {
     type: Boolean,
     default: false,
-    required: false,
   },
 })
 
 const buttonClass = computed(() => {
   switch (props.buttonType) {
     case 'primary':
-      return ['bg-[#49BBBD]', 'text-white', 'text-[12px] lg:text-[24px]']
-
+      return 'bg-[#49BBBD] text-white'
     case 'secondary':
-      return ['bg-white', 'text-red-500', 'text-[12px] lg:text-[24px]']
-
+      return 'bg-white text-red-500 border'
     default:
-      return ['bg-white', 'text-primary', 'text-[9px] lg:text-[18px]']
+      return 'bg-white text-primary border'
   }
 })
 </script>
@@ -33,38 +36,45 @@ const buttonClass = computed(() => {
 <template>
   <div
     :class="[
-      'card flex flex-col p-4 lg:p-8',
+      'card flex flex-col p-4 lg:p-8 transition',
       highlight
         ? 'shadow-[0px_16px_24px_rgba(38,50,56,0.08),0px_8px_8px_rgba(38,50,56,0.12)] scale-105'
         : '',
     ]"
   >
+    <!-- Header -->
     <div class="text-primary font-bold text-[9px] lg:text-[18px] flex justify-between">
-      <slot name="title"></slot>
+      <span>{{ title }}</span>
+
       <div
-        v-if="$slots.badge"
-        class="text-[rgba(45,52,54,1)] text-[6px] lg:text-[12px] border-[1px] p-2 rounded-[99px] border-[rgba(108,92,231,1)]"
+        v-if="badge"
+        class="text-[6px] lg:text-[12px] border p-2 rounded-[99px] border-[rgba(108,92,231,1)]"
       >
-        <slot name="badge"></slot>
+        {{ badge }}
       </div>
     </div>
+    <!-- Price -->
     <div class="font-bold text-[24px] lg:text-[48px]">
-      <slot name="price"></slot>
-      <span class="font-extrabold text-[6px] lg:text-[12px]"><slot name="time"></slot></span>
+      {{ price }}
+      <span class="font-extrabold text-[6px] lg:text-[12px]">{{ time }}</span>
     </div>
+    <!-- Benefits -->
     <div class="flex flex-col gap-2 lg:gap-4 mt-3 lg:mt-6 flex-1">
-      <div v-for="item in props.benefits" :key="item.text" class="flex items-center gap-2 lg:gap-4">
-        <img :src="item.icon" />
-        <span class="text-[rgba(45,52,54,1)] text-[9px] lg:text-[18px] font-normal">{{
-          item.text
-        }}</span>
+      <div v-for="item in benefits" :key="item.text" class="flex items-center gap-2 lg:gap-4">
+        <img :src="item.icon" class="w-4 lg:w-6" />
+        <span class="text-[9px] lg:text-[18px]">
+          {{ item.text }}
+        </span>
       </div>
     </div>
+    <!-- Button -->
     <button
-      :class="buttonClass"
-      class="border-[1px] mt-2 lg:mt-4 py-2 px-4 rounded-[16px] font-bold hover:scale-105 transition duration-700 ease-in-out"
+      :class="[
+        buttonClass,
+        'mt-2 lg:mt-4 py-2 px-4 rounded-[16px] font-bold hover:scale-105 transition duration-300',
+      ]"
     >
-      <slot name="button"></slot>
+      {{ buttonText }}
     </button>
   </div>
 </template>

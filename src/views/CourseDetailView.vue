@@ -5,71 +5,15 @@ import bgImg from '../assets/img/Course/banner.png'
 import CourseOverview from '@/components/CourseDetail/CourseOverview.vue'
 import CourseSideBar from '@/components/CourseDetail/CourseSidebar.vue'
 import RecommendedCourseCard from '@/components/Course/RecommendedCourseCard.vue'
-import CourseContent3Img1 from '../assets/img/Home/marketing-articles-01.png'
-import CourseContent3Img2 from '../assets/img/Home/marketing-articles-02.png'
-import UserAvt from '../assets/img/Avatar/user-avatar.png'
+
 import ClassroomPreview from '@/components/CourseDetail/ClassroomPreview.vue'
 import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
 import TheFooter from '@/components/Layout/TheFooter.vue'
-import RelatedBlog01 from '../assets/img/Home/related-blog-01.png'
-
-const coursesRecommended = ref([
-  {
-    img: CourseContent3Img1,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-  {
-    img: CourseContent3Img2,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-  {
-    img: CourseContent3Img1,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-  {
-    img: CourseContent3Img2,
-    time: '3 Months',
-    title: 'AWS Certified solutions Architect',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
-    userAvt: UserAvt,
-    userName: 'Lina',
-    oldPrice: '$100',
-    newPrice: '$80',
-  },
-])
-
-const instructors = ref([
-  {
-    bgImg: RelatedBlog01,
-    text: '50%',
-    title: 'FOR INSTRUCTORS FOR INSTRUCTORS FOR INSTRUCTORS',
-    desc: 'TOTC’s school management software helps traditional and online schools manage scheduling,',
-  },
-  {
-    bgImg: RelatedBlog01,
-    text: '50%',
-    title: 'FOR INSTRUCTORS',
-    desc: 'TOTC’s school management software helps traditional and online schools manage scheduling, TOTC’s school management software helps traditional and online schools manage scheduling,',
-  },
-])
+//Import data
+import { coursesRecommended } from '@/data/CourseDetail/RecommendedCourse'
+import { instructors } from '@/data/CourseDetail/TopEducation'
+const coursesRecommendedList = ref(coursesRecommended)
+const instructorList = ref(instructors)
 </script>
 
 <template>
@@ -102,7 +46,7 @@ const instructors = ref([
         class="content-3-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]"
       >
         <RecommendedCourseCard
-          v-for="(item, index) in coursesRecommended"
+          v-for="(item, index) in coursesRecommendedList"
           :key="index"
           :course="item"
         />
@@ -120,7 +64,7 @@ const instructors = ref([
       <button class="text-primary font-bold text-[20px]">See all</button>
     </div>
     <div class="flex flex-col lg:flex-row gap-[30px] pb-[200px] pt-[64px]">
-      <div class="flex-1" v-for="(instructor, index) in instructors" :key="index">
+      <div class="flex-1" v-for="(instructor, index) in instructorList" :key="index">
         <TopEducationCard :instructor="instructor" />
       </div>
     </div>

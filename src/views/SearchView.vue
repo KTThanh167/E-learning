@@ -11,17 +11,17 @@ import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
 import TheFooter from '@/components/Layout/TheFooter.vue'
 // Import Data
 import { creators } from '@/data/Search/Creator'
-const creatorList = ref(creators)
 import { infors, platform } from '@/data/Search/LearningPlatform'
+import { recommendedCourses } from '@/data/Search/RecommendedCourse'
+import { instructors } from '@/data/Search/TopEducation'
+import { student } from '@/data/Search/Student'
+import { filteredCourses } from '@/data/Search/SearchResult'
+const creatorList = ref(creators)
 const platformInfo = ref(infors)
 const platformFeatures = ref(platform)
-import { recommendedCourses } from '@/data/Search/RecommendedCourse'
 const recommendedCoursesList = ref(recommendedCourses)
-import { student } from '@/data/Search/Student'
 const studentReview = ref(student)
-import { instructors } from '@/data/Search/TopEducation'
 const topEducationList = ref(instructors)
-import { filteredCourses } from '@/data/Search/SearchResult'
 const filteredCoursesList = ref(filteredCourses)
 </script>
 
