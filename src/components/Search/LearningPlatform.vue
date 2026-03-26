@@ -2,12 +2,12 @@
 const props = defineProps({
   platform: {
     type: Object,
-    required: true,
-    default: () => {},
+    required: false,
+    default: () => ({}),
   },
   infors: {
     type: Array,
-    required: true,
+    required: false,
     default: () => [],
   },
 })
