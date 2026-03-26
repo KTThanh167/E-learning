@@ -12,8 +12,12 @@ import TheFooter from '@/components/Layout/TheFooter.vue'
 //Import data
 import { coursesRecommended } from '@/data/CourseDetail/RecommendedCourse'
 import { instructors } from '@/data/CourseDetail/TopEducation'
+import { buttons, courseRatings, users } from '@/data/CourseDetail/CourseOverview'
 const coursesRecommendedList = ref(coursesRecommended)
 const instructorList = ref(instructors)
+const buttonList = ref(buttons)
+const courseRatingsList = ref(courseRatings)
+const usersList = ref(users)
 </script>
 
 <template>
@@ -26,7 +30,13 @@ const instructorList = ref(instructors)
     <img class="mt-[2rem] relative" :src="bgImg" alt="" />
     <div class="container flex flex-col xl:flex-row gap-[100px]">
       <!-- Course overview -->
-      <div><CourseOverview /></div>
+      <div>
+        <CourseOverview
+          :buttons="buttonList"
+          :course-ratings="courseRatingsList"
+          :users="usersList"
+        />
+      </div>
       <!-- Course sidebar -->
       <div
         class="bg-white m-auto xl:p-[30px] rounded-[20px] xl:absolute xl:right-10 xl:translate-y-[-25%] max-w-[450px]"
