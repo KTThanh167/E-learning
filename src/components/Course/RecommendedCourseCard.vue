@@ -1,11 +1,18 @@
 <script setup>
-const props = defineProps({
+import { useCartStore } from '@/stores/cartStore'
+
+const { course } = defineProps({
   course: {
     type: Object,
     required: true,
-    default: () => {},
   },
 })
+
+const cartStore = useCartStore()
+
+const handleCart = () => {
+  cartStore.toggleCart(course)
+}
 </script>
 
 <template>
@@ -16,7 +23,7 @@ const props = defineProps({
       <div
         class="img rounded-[20px] overflow-hidden max-w-[167px] lg:max-w-[222px] justify-center items-center w-full"
       >
-        <img class="w-full object-cover" :src="props.course.img" alt="" />
+        <img class="w-full object-cover" :src="course.img" alt="" />
       </div>
     </div>
     <div class="flex items-center justify-between mt-[20px]">
@@ -26,30 +33,41 @@ const props = defineProps({
       </div>
       <div class="time flex items-center gap-[10px]">
         <img src="../../assets/img/Icon/time.png" alt="" />
-        <p class="text-[rgba(105,105,132,1)] font-medium text-[14px]">{{ props.course.time }}</p>
+        <p class="text-[rgba(105,105,132,1)] font-medium text-[14px]">{{ course.time }}</p>
       </div>
     </div>
     <div class="card-body mt-[20px] flex flex-col gap-[20px] flex-1">
       <div class="title line-clamp-2">
         <p class="text-[rgba(37,38,65,1)] font-medium text-[15px] lg:text-[24px]">
-          {{ props.course.title }}
+          {{ course.title }}
         </p>
       </div>
       <div class="desc flex-1">
-        <p class="text-[rgba(105,105,132,1)]">{{ props.course.desc }}</p>
+        <p class="text-[rgba(105,105,132,1)]">{{ course.desc }}</p>
       </div>
     </div>
     <div class="card-footer pt-[17px] flex justify-between items-center">
       <div class="user flex items-center gap-[10px]">
-        <img class="w-[44px] h-[44px]" :src="props.course.userAvt" alt="" />
-        <p class="font-medium text-[18px]">{{ props.course.userName }}</p>
+        <img class="w-[44px] h-[44px]" :src="course.userAvt" alt="" />
+        <p class="font-medium text-[18px]">{{ course.userName }}</p>
       </div>
       <div class="price flex gap-[10px]">
         <p class="text-[rgba(0,0,0,0.5)] italic line-through font-light text-[18px] self-center">
-          {{ props.course.oldPrice }}
+          {{ course.oldPrice }}
         </p>
-        <p class="text-primary font-bold text-[24px]">{{ props.course.newPrice }}</p>
+        <p class="text-primary font-bold text-[24px]">{{ course.newPrice }}</p>
       </div>
+    </div>
+    <div
+      class="mt-[15px] bg-primary p-3 text-white text-center font-bold text-[18px] rounded-[20px]"
+    >
+      <button
+        @click="handleCart"
+        class="w-full py-2 rounded-lg text-white"
+        :class="cartStore.isInCart(course.id) ? 'bg-red-400' : 'bg-primary'"
+      >
+        {{ cartStore.isInCart(course.id) ? 'Remove' : 'Add to cart' }}
+      </button>
     </div>
   </div>
 </template>

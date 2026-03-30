@@ -4,9 +4,10 @@ import UserAvt from '@/assets/img/Avatar/user-avatar.png'
 
 export const coursesRecommended = [
   {
+    id: 5,
     img: MarketingArticles01,
     time: '3 Months',
-    title: 'AWS Certified solutions Architect',
+    title: 'AWS Architect',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
     userAvt: UserAvt,
     userName: 'Lina',
@@ -14,9 +15,10 @@ export const coursesRecommended = [
     newPrice: '$80',
   },
   {
+    id: 6,
     img: MarketingArticles02,
     time: '3 Months',
-    title: 'AWS Certified solutions Architect',
+    title: 'UI/UX Design',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
     userAvt: UserAvt,
     userName: 'Lina',
@@ -24,9 +26,10 @@ export const coursesRecommended = [
     newPrice: '$80',
   },
   {
+    id: 7,
     img: MarketingArticles01,
     time: '3 Months',
-    title: 'AWS Certified solutions Architect',
+    title: 'React Developer',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
     userAvt: UserAvt,
     userName: 'Lina',
@@ -34,9 +37,10 @@ export const coursesRecommended = [
     newPrice: '$80',
   },
   {
+    id: 8,
     img: MarketingArticles02,
     time: '3 Months',
-    title: 'AWS Certified solutions Architect',
+    title: 'Vue Mastery',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
     userAvt: UserAvt,
     userName: 'Lina',

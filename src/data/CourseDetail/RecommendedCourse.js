@@ -4,6 +4,7 @@ import UserAvt from '@/assets/img/Avatar/user-avatar.png'
 
 export const coursesRecommended = [
   {
+    id: 1,
     img: MarketingArticles01,
     time: '3 Months',
     title: 'AWS Certified solutions Architect',
@@ -14,6 +15,7 @@ export const coursesRecommended = [
     newPrice: '$80',
   },
   {
+    id: 2,
     img: MarketingArticles02,
     time: '3 Months',
     title: 'AWS Certified solutions Architect',
@@ -24,6 +26,7 @@ export const coursesRecommended = [
     newPrice: '$80',
   },
   {
+    id: 3,
     img: MarketingArticles01,
     time: '3 Months',
     title: 'AWS Certified solutions Architect',
@@ -34,6 +37,7 @@ export const coursesRecommended = [
     newPrice: '$80',
   },
   {
+    id: 4,
     img: MarketingArticles02,
     time: '3 Months',
     title: 'AWS Certified solutions Architect',

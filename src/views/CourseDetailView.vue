@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import bgImg from '../assets/img/Course/banner.png'
 import CourseOverview from '@/components/CourseDetail/CourseOverview.vue'
 import CourseSideBar from '@/components/CourseDetail/CourseSidebar.vue'
@@ -16,6 +16,10 @@ const instructorList = ref(instructors)
 const buttonList = ref(buttons)
 const courseRatingsList = ref(courseRatings)
 const usersList = ref(users)
+
+onMounted(() => {
+  console.log(coursesRecommended)
+})
 </script>
 
 <template>
@@ -49,8 +53,8 @@ const usersList = ref(users)
         class="content-3-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]"
       >
         <RecommendedCourseCard
-          v-for="(item, index) in coursesRecommendedList"
-          :key="index"
+          v-for="item in coursesRecommendedList"
+          :key="item.id"
           :course="item"
         />
       </div>
