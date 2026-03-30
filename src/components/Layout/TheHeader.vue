@@ -9,7 +9,7 @@ const handleMenu = () => {
 </script>
 
 <template>
-  <div class="header">
+  <div class="header bg-white">
     <div class="header_logo">
       <img src="../../assets/img/Icon/logo.png" alt="logo" />
     </div>
@@ -20,7 +20,7 @@ const handleMenu = () => {
         <li
           class="text-gray-500 text-[40px] hover:scale-105 transition duration-500 ease-in-out font-normal"
         >
-          <router-link to="/home">Home</router-link>
+          <router-link to="/">Home</router-link>
         </li>
         <li
           class="text-gray-500 text-[40px] hover:scale-105 transition duration-500 ease-in-out font-normal"
@@ -35,12 +35,12 @@ const handleMenu = () => {
         <li
           class="text-gray-500 text-[40px] hover:scale-105 transition duration-500 ease-in-out font-normal"
         >
-          <router-link to="/home">Blog</router-link>
+          <router-link to="/">Blog</router-link>
         </li>
         <li
           class="text-gray-500 text-[40px] hover:scale-105 transition duration-500 ease-in-out font-normal"
         >
-          <router-link to="/home"> About Us </router-link>
+          <router-link to="/"> About Us </router-link>
         </li>
       </ul>
     </div>
@@ -51,7 +51,7 @@ const handleMenu = () => {
         <li
           class="text-gray-500 hover:scale-105 transition duration-500 ease-in-out font-normal text-[25px]"
         >
-          <router-link to="/home">Home</router-link>
+          <router-link to="/">Home</router-link>
         </li>
         <li
           class="text-gray-500 hover:scale-105 transition duration-500 ease-in-out font-normal text-[25px]"
@@ -66,12 +66,12 @@ const handleMenu = () => {
         <li
           class="text-gray-500 hover:scale-105 transition duration-500 ease-in-out font-normal text-[25px]"
         >
-          <router-link to="/home">Blog</router-link>
+          <router-link to="/">Blog</router-link>
         </li>
         <li
           class="text-gray-500 hover:scale-105 transition duration-500 ease-in-out font-normal text-[25px]"
         >
-          <router-link to="/home">About Us</router-link>
+          <router-link to="/">About Us</router-link>
         </li>
       </ul>
     </div>
@@ -85,7 +85,7 @@ const handleMenu = () => {
       <div class="menu-nav" v-if="navMenu">
         <ul class="nav-link">
           <li class="text-gray-500 text-[20px] font-normal">
-            <router-link to="/home">Home</router-link>
+            <router-link to="/">Home</router-link>
           </li>
           <li class="text-gray-500 text-[20px] font-normal">
             <router-link to="/course">Course</router-link>
@@ -94,10 +94,10 @@ const handleMenu = () => {
             <router-link to="/membership">Careers</router-link>
           </li>
           <li class="text-gray-500 text-[20px] font-normal">
-            <router-link to="/home">Blog</router-link>
+            <router-link to="/">Blog</router-link>
           </li>
           <li class="text-gray-500 text-[20px] font-normal">
-            <router-link to="/home">About Us</router-link>
+            <router-link to="/">About Us</router-link>
           </li>
         </ul>
       </div>

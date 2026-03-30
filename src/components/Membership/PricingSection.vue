@@ -5,6 +5,7 @@ const props = defineProps({
   card: {
     type: Object,
     default: () => {},
+    required: true,
   },
   benefits: {
     type: Array,

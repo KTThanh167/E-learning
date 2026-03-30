@@ -1,31 +1,36 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+
 const router = useRouter()
-
-//reset form
-const resetForm = () => {
-  email.value = ''
-  password.value = ''
-}
-
-//local storage
+//Local storage
 const STORAGE_KEY = 'logins'
+
 const getLogins = () => {
   const data = JSON.parse(localStorage.getItem(STORAGE_KEY))
   return Array.isArray(data) ? data : []
 }
+
 const email = ref('')
 const password = ref('')
 const logins = ref(getLogins())
-//sự kiện ấn nút login
+const rememberCheck = ref(false)
+const seePassword = ref(false)
+
+const resetForm = () => {
+  email.value = ''
+  password.value = ''
+}
+//Sự kiến ấn nút đăng nhập
 const handleLogin = () => {
   const emailUser = email.value.trim()
   const passwordUser = password.value.trim()
+
   if (!emailUser || !passwordUser) {
     alert('Hãy nhập đầy đủ thông tin')
     return
   }
+
   const user = logins.value.find((u) => u.email === emailUser)
 
   if (!user) {
@@ -37,84 +42,89 @@ const handleLogin = () => {
     alert('Sai mật khẩu')
     return
   }
+
   router.push('/home')
   resetForm()
 }
-
-//sự kiện ấn nút ghi nhớ mật khẩu
-const rememberCheck = ref(false)
+//Sự kiện ấn nút nhớ mật khẩu
 const handleRememberPass = () => {
   rememberCheck.value = !rememberCheck.value
 }
-
-//sự kiện ấn nút hiển thị mật khẩu
-const seePassword = ref(false)
+//Sự kiện hiển thị mật khẩu
 const handleSeePassword = () => {
   seePassword.value = !seePassword.value
 }
 </script>
 
 <template>
-  <div class="container">
-    <div class="login">
-      <div class="login_left">
-        <img class="login-img" src="../assets/img/Login/login-img.png" alt="" />
-        <div class="login_left-text">
-          <p class="font-w-700 text-37">Lorem Ipsum is simply</p>
-          <p class="font-w-400 text-25">Lorem Ipsum is simply</p>
+  <div class="login">
+    <div class="login__container">
+      <!-- Left -->
+      <div class="login__left">
+        <img class="login__image" src="../assets/img/Login/banner.png" alt="" />
+        <div class="login__left-text">
+          <p class="login__title">Lorem Ipsum is simply</p>
+          <p class="login__subtitle">Lorem Ipsum is simply</p>
         </div>
       </div>
-      <div class="login_right">
-        <p class="login_right-title text-16 font-w-400">Welcome to lorem..!</p>
-        <div class="navigation">
-          <router-link to="/login" class="navi-login font-w-500 text-16">Login</router-link>
-          <router-link to="/register" class="navi-regis font-w-500 text-16">Register</router-link>
+
+      <!-- Right -->
+      <div class="login__right">
+        <p class="login__welcome">Welcome to lorem..!</p>
+
+        <div class="login__navigation">
+          <router-link to="/login" class="login__nav-item login__nav-item--active"
+            >Login</router-link
+          >
+          <router-link to="/register" class="login__nav-item">Register</router-link>
         </div>
-        <form class="login_content" id="login-form" @submit.prevent="handleLogin">
-          <p class="login_content-text font-w-400 text-16 text-gray">
+
+        <form class="login__form" @submit.prevent="handleLogin">
+          <p class="login__description">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
-          <div class="email">
-            <p class="font-w-400 text-16">Email</p>
+
+          <!-- Email -->
+          <div class="login__field">
+            <p class="login__label">Email</p>
             <input
+              class="login__input"
               type="email"
-              id="email"
               placeholder="Enter your Email"
               autocomplete="username"
               v-model="email"
             />
           </div>
-          <div class="password">
-            <p class="font-w-400 text-16">Password</p>
+
+          <!-- Password -->
+          <div class="login__field login__field--password">
+            <p class="login__label">Password</p>
             <input
+              class="login__input"
               :type="seePassword ? 'text' : 'password'"
-              id="password"
               placeholder="Enter your Password"
               autocomplete="current-password"
               v-model="password"
             />
-            <button class="password_button" type="button" @click="handleSeePassword">
+            <button class="login__toggle-password" type="button" @click="handleSeePassword">
               <img src="../assets/img/Icon/invisible1.svg" alt="" />
             </button>
           </div>
-          <div class="passwork-option">
-            <div class="remember-pass">
-              <input type="checkbox" name="" id="" v-model="rememberCheck" />
-              <button
-                class="font-w-300 text-12 remember-btn"
-                type="button"
-                @click="handleRememberPass"
-              >
+
+          <!-- Options -->
+          <div class="login__options">
+            <div class="login__remember">
+              <input type="checkbox" v-model="rememberCheck" />
+              <button type="button" class="login__remember-btn" @click="handleRememberPass">
                 Remember me
               </button>
             </div>
-            <div class="forgot-pass">
-              <button class="font-w-300 text-12 forget-pass-btn" type="button">
-                Forgot Password ?
-              </button>
-            </div>
+
+            <button class="login__forgot" type="button">Forgot Password?</button>
           </div>
-          <button class="login-button font-w-400 text-16">Login</button>
+
+          <!-- Submit -->
+          <button class="login__submit">Login</button>
         </form>
       </div>
     </div>
@@ -122,210 +132,166 @@ const handleSeePassword = () => {
 </template>
 
 <style scoped>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
+.login__container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.text-gray {
-  color: rgba(105, 105, 132, 1);
-}
-.text-light-blue {
-  color: #49bbbd;
-}
-.text-blue {
-  color: #2f327d;
+.login__left {
+  display: none;
+  position: relative;
 }
 
-.font-w-300 {
-  font-weight: 300;
+.login__image {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  border-radius: 29px;
 }
-.font-w-400 {
-  font-weight: 400;
+
+.login__left-text {
+  position: absolute;
+  bottom: 90px;
+  left: 70px;
+  color: white;
 }
-.font-w-500 {
-  font-weight: 500;
-}
-.font-w-600 {
-  font-weight: 600;
-}
-.font-w-700 {
+
+.login__title {
+  font-size: 37px;
   font-weight: 700;
 }
-.font-w-800 {
-  font-weight: 800;
-}
 
-.text-16 {
-  font-size: 16px;
-}
-.text-15 {
-  font-size: 15px;
-}
-.text-12 {
-  font-size: 12px;
-}
-.text-37 {
-  font-size: 37px;
-}
-.text-25 {
+.login__subtitle {
   font-size: 25px;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 18px;
-}
-.login_left {
-  display: none;
-}
-.login {
-  display: grid;
-  grid-template-columns: 1fr;
-  min-height: 100vh;
-  place-items: center;
-}
-.login_right {
+.login__right {
   display: flex;
   flex-direction: column;
 }
-.login_right-title {
-  align-self: center;
-  padding-bottom: 24px;
+
+.login__welcome {
+  text-align: center;
+  margin-bottom: 24px;
 }
-.navigation {
+
+.login__navigation {
   display: flex;
-  background-color: rgba(73, 187, 189, 0.6);
+  background: rgba(73, 187, 189, 0.6);
   border-radius: 33px;
   padding: 10px;
   justify-content: space-around;
-  align-items: center;
 }
-.navi-login,
-.navi-regis {
+
+.login__nav-item {
   text-decoration: none;
   color: white;
-  border: none;
-}
-.navi-login {
   padding: 8px 45px;
-  background-color: rgba(73, 187, 189, 1);
   border-radius: 33px;
 }
-.login_content {
-  padding-top: 52px;
+
+.login__nav-item--active {
+  background: rgba(73, 187, 189, 1);
+}
+
+.login__form {
+  margin-top: 52px;
   display: flex;
   flex-direction: column;
 }
-.login_content-text {
-  padding-bottom: 42px;
+
+.login__description {
+  margin-bottom: 42px;
+  color: rgba(105, 105, 132, 1);
 }
-.email,
-.password {
+
+.login__field {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-#email,
-#password {
-  padding: 15px 23px;
-  border-radius: 40px;
-  border: 1px solid rgba(73, 187, 189, 1);
-  color: rgba(172, 172, 172, 1);
-}
-.password {
+
+.login__field--password {
   position: relative;
   margin-top: 30px;
 }
-.password_button {
-  width: max-content;
-  border: none;
-  background-color: white;
+
+.login__label {
+  font-size: 16px;
+}
+
+.login__input {
+  padding: 15px 23px;
+  border-radius: 40px;
+  border: 1px solid rgba(73, 187, 189, 1);
+}
+
+.login__toggle-password {
   position: absolute;
   right: 20px;
   top: 60%;
-}
-.password_button:hover {
+  border: none;
+  background: transparent;
   cursor: pointer;
 }
-.passwork-option {
+
+.login__options {
   display: flex;
   justify-content: space-between;
-  padding-top: 22px;
-  padding-bottom: 62px;
+  margin: 22px 0 62px;
 }
-.remember-pass {
+
+.login__remember {
   display: flex;
   gap: 6px;
+  align-items: center;
 }
-.login-button {
+
+.login__remember-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.login__forgot {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.login__submit {
+  align-self: flex-end;
   padding: 13px 84px;
-  background-color: #49bbbd;
+  background: #49bbbd;
   color: white;
   border: none;
   border-radius: 36px;
-  width: max-content;
-  align-self: flex-end;
-}
-.login-button:hover {
-  cursor: pointer;
-  background-color: #3aa1a2;
-}
-.forget-pass-btn {
-  border: none;
-  background-color: white;
   cursor: pointer;
 }
-.remember-btn {
-  border: none;
-  background-color: white;
-  cursor: pointer;
+
+.login__submit:hover {
+  background: #3aa1a2;
 }
-/* Tablet */
+
+/* Responsive */
 @media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-  .login_left {
-    display: block;
-    padding: 38px 0;
-    position: relative;
-  }
-  .login {
+  .login__container {
     grid-template-columns: 1fr 1fr;
     gap: 111px;
   }
-  .login-img {
-    width: 100%;
-    height: 90vh;
-    object-fit: cover;
-    border-radius: 29px;
-  }
-  .login_left-text {
-    position: absolute;
-    bottom: 90px;
-    left: 70px;
-    color: white;
-  }
-}
 
-/* Laptop */
-@media (min-width: 1024px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-/* Desktop lớn */
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1200px;
+  .login__left {
+    display: block;
   }
 }
 </style>

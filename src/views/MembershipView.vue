@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import TheHeader from '../components/Layout/TheHeader.vue'
 import PricingSection from '../components/Membership/PricingSection.vue'
 import RemoteLearningDesc from '../components/Membership/RemoteLearningDesc.vue'
 import MembershipContent3Icon from '../assets/img/Icon/green-circle.png'
@@ -8,7 +7,6 @@ import openIcon from '../assets/img/Icon/open.png'
 import closeIcon from '../assets/img/Icon/close.png'
 import StudentsCommentCard from '../components/Membership/StudentsCommentCard.vue'
 import FeatureCards from '../components/Membership/FeatureCard.vue'
-import TheFooter from '../components/Layout/TheFooter.vue'
 import MembershipBanner from '@/components/Membership/MembershipBanner.vue'
 //import data
 import { coaching } from '@/data/Membership/Banner'
@@ -34,10 +32,6 @@ const handleShowDesc = (index) => {
 
 <template>
   <div class="hero-section w-100%">
-    <!-- Header -->
-    <div class="container">
-      <TheHeader></TheHeader>
-    </div>
     <!-- Affordable pricing -->
     <div class="container">
       <div class="flex flex-col items-center pt-[150px]">
@@ -191,7 +185,5 @@ const handleShowDesc = (index) => {
         </div>
       </div>
     </div>
-    <!-- Footer -->
-    <TheFooter></TheFooter>
   </div>
 </template>

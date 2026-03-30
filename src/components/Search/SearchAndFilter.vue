@@ -46,7 +46,7 @@ const forms = ref([
 <template>
   <div
     :style="{
-      backgroundImage: `linear-gradient(${overlayColor}, ${overlayColor}), url(${searchBanner})`,
+      backgroundImage: `linear-gradient(${overlayColor}), url(${searchBanner})`,
     }"
     class="min-h-[326px] bg-center mt-[30px] flex items-center justify-center"
   >

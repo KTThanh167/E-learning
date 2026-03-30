@@ -1,19 +1,12 @@
 <script setup>
-import TheHeader from '../components/Layout/TheHeader.vue'
 import BlogCategoryCard from '../components/Home/BlogCategoryCard.vue'
 import '../assets/main.css'
 import FeaturedBlogCard from '../components/Home/FeaturedBlogCard.vue'
 import MarketingContentCard from '../components/Home/MarketingContentCard.vue'
-import TheFooter from '../components/Layout/TheFooter.vue'
 </script>
 
 <template>
   <div class="hero-section w-100%">
-    <!-- Header -->
-    <div class="container">
-      <!-- Header -->
-      <TheHeader></TheHeader>
-    </div>
     <!-- Content 1 -->
     <div
       class="content-1 bg-[rgba(157,204,255,1)] mt-[30px] md:mt-[45px] lg:mt-[57px] pt-[35px] lg:pt-[70px] pb-[35px] lg:pb-[70px]"
@@ -422,10 +415,6 @@ import TheFooter from '../components/Layout/TheFooter.vue'
           </MarketingContentCard>
         </div>
       </div>
-    </div>
-    <!-- Footer -->
-    <div class="footer">
-      <TheFooter></TheFooter>
     </div>
   </div>
 </template>

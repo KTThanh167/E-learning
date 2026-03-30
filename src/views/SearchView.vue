@@ -1,14 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 import RecommendedCourseCard from '@/components/Course/RecommendedCourseCard.vue'
-import TheHeader from '@/components/Layout/TheHeader.vue'
 import LearningPlatform from '@/components/Search/LearningPlatform.vue'
 import SearchAndFilter from '@/components/Search/SearchAndFilter.vue'
 import SearchResult from '@/components/Search/SearchResult.vue'
 import CreatorCard from '@/components/Search/CreatorCard.vue'
 import StudentsSay from '@/components/Search/StudentsSay.vue'
 import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
-import TheFooter from '@/components/Layout/TheFooter.vue'
 // Import Data
 import { creators } from '@/data/Search/Creator'
 import { infors, platform } from '@/data/Search/LearningPlatform'
@@ -26,10 +24,6 @@ const filteredCoursesList = ref(filteredCourses)
 </script>
 
 <template>
-  <!-- Header -->
-  <div class="container">
-    <TheHeader />
-  </div>
   <!-- Search & Filter Section -->
   <div>
     <SearchAndFilter />
@@ -103,6 +97,4 @@ const filteredCoursesList = ref(filteredCourses)
       />
     </div>
   </div>
-  <!-- Footer -->
-  <TheFooter />
 </template>

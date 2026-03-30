@@ -50,7 +50,7 @@ const time = ref('11 hours left at this price')
 
 <template>
   <div>
-    <!-- Side bar 1 -->
+    <!-- price -->
     <div class="">
       <img
         class="w-[220px] sm:w-[300px] md:w-[380px] xl:w-[443px] aspect-[443/268] object-cover m-auto"
@@ -72,7 +72,7 @@ const time = ref('11 hours left at this price')
       </div>
     </div>
     <div class="h-[1px] bg-[rgba(105,105,132,1)] mt-8"></div>
-    <!-- Side bar 2 -->
+    <!-- benefit -->
     <div>
       <p class="font-semibold text-[30px] mt-[30px]">This Course included</p>
       <div class="flex gap-3 mb-[10px]" v-for="(include, index) in includes" :key="index">
@@ -81,7 +81,7 @@ const time = ref('11 hours left at this price')
       </div>
     </div>
     <div class="h-[1px] bg-[rgba(105,105,132,1)] mt-8"></div>
-    <!-- Side bar 3 -->
+    <!-- training for -->
     <div class="mt-[30px] flex flex-col gap-[30px]">
       <p class="font-semibold text-[30px]">Training 5 or more people</p>
       <p class="text-[rgba(105,105,132,1)] line-clamp-2">
@@ -90,7 +90,7 @@ const time = ref('11 hours left at this price')
       </p>
     </div>
     <div class="h-[1px] bg-[rgba(105,105,132,1)] mt-8"></div>
-    <!-- Side bar 4 -->
+    <!-- share -->
     <div class="mt-[30px]">
       <p class="font-semibold text-[30px]">Share this course</p>
       <div class="flex gap-[25px] mt-[20px]">

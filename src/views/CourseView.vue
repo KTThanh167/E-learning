@@ -1,11 +1,9 @@
 <script setup>
 import { ref } from 'vue'
 import LearningProgressCard from '../components/Course/LearningProgressCard.vue'
-import TheHeader from '../components/Layout/TheHeader.vue'
 import CategoryCard from '../components/Course/CategoryCard.vue'
 import RecommendedCourseCard from '../components/Course/RecommendedCourseCard.vue'
 import Content2Component from '@/components/Membership/MembershipBanner.vue'
-import TheFooter from '../components/Layout/TheFooter.vue'
 //Import data
 import { courseCategory } from '@/data/Course/CategoryCourse'
 import { courseList } from '@/data/Course/LearningProgress'
@@ -19,10 +17,6 @@ const coursesRecommendedList = ref(coursesRecommended)
 
 <template>
   <div class="hero-section w-100%">
-    <!-- Header -->
-    <div class="container">
-      <TheHeader></TheHeader>
-    </div>
     <!-- LearningProgress -->
     <div class="bg-[rgba(157,204,255,0.2)] pt-[25px] pb-[28px] lg:pt-[50px] lg:pb-[57px]">
       <div class="container flex flex-col">
@@ -144,7 +138,5 @@ const coursesRecommendedList = ref(coursesRecommended)
         </div>
       </div>
     </div>
-    <!-- Footer -->
-    <TheFooter></TheFooter>
   </div>
 </template>
