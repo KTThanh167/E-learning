@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import TheHeader from '@/components/Layout/TheHeader.vue'
 import bgImg from '../assets/img/Course/banner.png'
 import CourseOverview from '@/components/CourseDetail/CourseOverview.vue'
 import CourseSideBar from '@/components/CourseDetail/CourseSidebar.vue'
@@ -8,7 +7,6 @@ import RecommendedCourseCard from '@/components/Course/RecommendedCourseCard.vue
 
 import ClassroomPreview from '@/components/CourseDetail/ClassroomPreview.vue'
 import TopEducationCard from '@/components/CourseDetail/TopEducationCard.vue'
-import TheFooter from '@/components/Layout/TheFooter.vue'
 //Import data
 import { coursesRecommended } from '@/data/CourseDetail/RecommendedCourse'
 import { instructors } from '@/data/CourseDetail/TopEducation'
@@ -21,11 +19,6 @@ const usersList = ref(users)
 </script>
 
 <template>
-  <div class="container">
-    <!-- Header -->
-    <TheHeader></TheHeader>
-    <!-- Course Detail -->
-  </div>
   <div class="relative">
     <img class="mt-[2rem] relative" :src="bgImg" alt="" />
     <div class="container flex flex-col xl:flex-row gap-[100px]">
@@ -79,6 +72,4 @@ const usersList = ref(users)
       </div>
     </div>
   </div>
-  <!-- Footer -->
-  <TheFooter />
 </template>

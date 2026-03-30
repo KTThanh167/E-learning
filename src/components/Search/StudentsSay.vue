@@ -12,7 +12,11 @@ const props = defineProps({
   <div class="pt-[70px] pb-[80px]">
     <p class="text-[30px] font-medium pb-[70px]">What our students have to say</p>
     <div class="bg-white rounded-[40px] pt-[40px] px-[50px] flex flex-col lg:flex-row gap-[50px]">
-      <img src="../../assets/img/Search/students-say-banner.png" class="max-w-[500px]" alt="" />
+      <img
+        src="../../assets/img/Search/students-say-banner.png"
+        class="max-w-[500px] pb-[34px]"
+        alt=""
+      />
       <div>
         <div>
           <p class="font-bold text-[30px] text-[rgba(37,38,65,1)] pb-[30px]">
