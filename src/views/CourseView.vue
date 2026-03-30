@@ -28,8 +28,8 @@ const coursesRecommendedList = ref(coursesRecommended)
         </div>
         <div class="pt-[25px] lg:pt-[50px] grid gap-[15px] lg:grid-cols-3 lg:gap-[50px]">
           <LearningProgressCard
-            v-for="(item, index) in learningProgressList"
-            :key="index"
+            v-for="item in learningProgressList"
+            :key="item.id"
             :course="item"
           />
         </div>
