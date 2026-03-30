@@ -10,6 +10,7 @@ import SearchView from '@/views/SearchView.vue'
 
 import MainLayout from '@/layouts/MainLayout.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
+import CartView from '@/views/CartView.vue'
 
 const routes = [
   {
@@ -56,6 +57,11 @@ const routes = [
         path: 'register',
         name: 'register',
         component: RegisterView,
+      },
+      {
+        path: 'cart',
+        name: 'cart',
+        component: CartView,
       },
     ],
   },

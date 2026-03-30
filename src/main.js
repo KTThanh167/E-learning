@@ -18,9 +18,21 @@ import {
   faAngleRight,
   faEye,
   faCheck,
+  faCartShopping,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUser, faLock, faBars, faAngleDown, faX, faAngleLeft, faAngleRight, faEye, faCheck)
+library.add(
+  faUser,
+  faLock,
+  faBars,
+  faAngleDown,
+  faX,
+  faAngleLeft,
+  faAngleRight,
+  faEye,
+  faCheck,
+  faCartShopping,
+)
 
 const app = createApp(App)
 
