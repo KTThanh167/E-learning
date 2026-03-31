@@ -59,7 +59,8 @@ const handleCart = () => {
       </div>
     </div>
     <div
-      class="mt-[15px] bg-primary p-3 text-white text-center font-bold text-[18px] rounded-[20px]"
+      class="mt-[15px] p-3 text-white text-center font-bold text-[18px] rounded-[20px]"
+      :class="cartStore.isInCart(course.id) ? 'bg-red-400' : 'bg-primary'"
     >
       <button
         @click="handleCart"

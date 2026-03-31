@@ -71,8 +71,8 @@ const coursesRecommendedList = ref(coursesRecommended)
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommendedList"
-            :key="index"
+            v-for="item in coursesRecommendedList"
+            :key="item.id"
             :course="item"
           />
         </div>
@@ -95,8 +95,8 @@ const coursesRecommendedList = ref(coursesRecommended)
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommendedList"
-            :key="index"
+            v-for="item in coursesRecommendedList"
+            :key="item.id"
             :course="item"
           />
         </div>
@@ -115,8 +115,8 @@ const coursesRecommendedList = ref(coursesRecommended)
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommendedList"
-            :key="index"
+            v-for="item in coursesRecommendedList"
+            :key="item.id"
             :course="item"
           />
         </div>
@@ -131,8 +131,8 @@ const coursesRecommendedList = ref(coursesRecommended)
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] pt-[50px] pb-[90px]">
           <RecommendedCourseCard
-            v-for="(item, index) in coursesRecommendedList"
-            :key="index"
+            v-for="item in coursesRecommendedList"
+            :key="item.id"
             :course="item"
           />
         </div>
