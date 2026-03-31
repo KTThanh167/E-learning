@@ -25,11 +25,11 @@ const cancelRemove = () => {
 }
 
 const increaseCount = (id) => {
-  cartStore.increaseQuantity(id)
+  cartStore.increaseCount(id)
 }
 
 const decreaseCount = (id) => {
-  cartStore.decreaseQuantity(id)
+  cartStore.decreaseCount(id)
 }
 </script>
 
