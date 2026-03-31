@@ -10,6 +10,7 @@ import SearchView from '@/views/SearchView.vue'
 
 import MainLayout from '@/layouts/MainLayout.vue'
 import AuthLayout from '@/layouts/AuthLayout.vue'
+import EmptyLayout from '@/layouts/EmptyLayout.vue'
 import CartView from '@/views/CartView.vue'
 
 const routes = [
@@ -58,6 +59,17 @@ const routes = [
         name: 'register',
         component: RegisterView,
       },
+      {
+        path: 'cart',
+        name: 'cart',
+        component: CartView,
+      },
+    ],
+  },
+  {
+    path: '/',
+    component: EmptyLayout,
+    children: [
       {
         path: 'cart',
         name: 'cart',
