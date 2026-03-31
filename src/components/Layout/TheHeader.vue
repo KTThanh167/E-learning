@@ -1,10 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import '@/assets/main.css'
 import { useCartStore } from '@/stores/cartStore'
 
 const navMenu = ref(false)
 const cartStore = useCartStore()
+
+const cartTotalItems = computed(() => cartStore.totalItems)
 
 const handleMenu = () => {
   navMenu.value = !navMenu.value
@@ -86,10 +88,10 @@ const handleMenu = () => {
 
           <!-- BADGE -->
           <span
-            v-if="cartStore.totalItems > 0"
+            v-if="cartTotalItems > 0"
             class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] lg:text-[12px] px-2 rounded-full"
           >
-            {{ cartStore.totalItems }}
+            {{ cartTotalItems }}
           </span>
         </div>
       </router-link>

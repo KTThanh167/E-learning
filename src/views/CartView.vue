@@ -23,6 +23,14 @@ const confirmRemove = () => {
 const cancelRemove = () => {
   showConfirm.value = false
 }
+
+const increaseCount = (id) => {
+  cartStore.increaseQuantity(id)
+}
+
+const decreaseCount = (id) => {
+  cartStore.decreaseQuantity(id)
+}
 </script>
 
 <template>
@@ -58,6 +66,22 @@ const cancelRemove = () => {
 
         <!-- RIGHT -->
         <div class="flex items-center gap-[20px]">
+          <!-- Tăng giảm số lượng khóa học muốn mua -->
+          <div>
+            <button
+              @click="decreaseCount(item.id)"
+              class="bg-gray-300 text-gray-700 px-3 py-1 rounded-l hover:bg-gray-400"
+            >
+              -
+            </button>
+            <span class="bg-gray-200 text-gray-700 px-3 py-1"> {{ item.quantity }}</span>
+            <button
+              @click="increaseCount(item.id)"
+              class="bg-gray-300 text-gray-700 px-3 py-1 rounded-r hover:bg-gray-400"
+            >
+              +
+            </button>
+          </div>
           <p class="text-primary font-bold text-[18px]">
             {{ item.newPrice }}
           </p>

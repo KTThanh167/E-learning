@@ -13,6 +13,7 @@ export const coursesRecommended = [
     userName: 'Lina',
     oldPrice: '$100',
     newPrice: '$80',
+    quantity: 1,
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const coursesRecommended = [
     userName: 'Lina',
     oldPrice: '$100',
     newPrice: '$80',
+    quantity: 1,
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ export const coursesRecommended = [
     userName: 'Lina',
     oldPrice: '$100',
     newPrice: '$80',
+    quantity: 1,
   },
   {
     id: 4,
@@ -46,5 +49,6 @@ export const coursesRecommended = [
     userName: 'Lina',
     oldPrice: '$100',
     newPrice: '$80',
+    quantity: 1,
   },
 ]
