@@ -14,7 +14,8 @@ export const useCartStore = defineStore('cart', {
 
     totalPrice: (state) => {
       return state.cart.reduce((total, item) => {
-        return total + Number(item.newPrice.replace('$', ''))
+        const price = Number(item.newPrice.replace('$', ''))
+        return total + price * item.quantity
       }, 0)
     },
   },
@@ -37,6 +38,22 @@ export const useCartStore = defineStore('cart', {
         this.removeFromCart(course.id)
       } else {
         this.addToCart(course)
+      }
+    },
+
+    increaseCount(id) {
+      const item = this.cart.find((i) => i.id === id)
+      if (item) {
+        item.quantity++
+        this.saveToLocalStorage()
+      }
+    },
+
+    decreaseCount(id) {
+      const item = this.cart.find((i) => i.id === id)
+      if (item && item.quantity > 1) {
+        item.quantity--
+        this.saveToLocalStorage()
       }
     },
 
