@@ -1,9 +1,11 @@
 <script setup>
 import { useCartStore } from '@/stores/cartStore'
+import { ref, computed } from 'vue'
 
 const cartStore = useCartStore()
 
-import { ref } from 'vue'
+const cartItems = computed(() => cartStore.cart)
+const isEmpty = computed(() => cartItems.value.length === 0)
 
 const showConfirm = ref(false)
 const selectedId = ref(null)
@@ -34,14 +36,14 @@ const cancelRemove = () => {
     </button>
 
     <!-- EMPTY -->
-    <div v-if="cartStore.cart.length === 0" class="text-center py-[50px]">
+    <div v-if="isEmpty" class="text-center py-[50px]">
       <p class="text-red-500 font-semibold text-[30px]">Your cart is empty.</p>
     </div>
 
     <!-- LIST -->
     <div v-else class="flex flex-col gap-[20px]">
       <div
-        v-for="item in cartStore.cart"
+        v-for="item in cartItems"
         :key="item.id"
         class="flex justify-between items-center p-[20px] bg-white rounded-[10px] shadow"
       >
