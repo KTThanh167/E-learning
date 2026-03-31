@@ -26,6 +26,12 @@ const cancelRemove = () => {
 <template>
   <div class="container py-[100px]">
     <h1 class="text-[30px] font-bold mb-[30px] pt-[50px]">Your Cart</h1>
+    <button
+      @click="$router.back()"
+      class="text-white font-bold p-[20px] bg-primary mb-[30px] rounded-[10px] hover:scale-105 transition duration-300"
+    >
+      Back to Courses
+    </button>
 
     <!-- EMPTY -->
     <div v-if="cartStore.cart.length === 0" class="text-center py-[50px]">
@@ -54,10 +60,14 @@ const cancelRemove = () => {
             {{ item.newPrice }}
           </p>
 
-          <button @click="openConfirm(item.id)" class="bg-red-500 text-white px-3 py-1 rounded">
+          <button
+            @click="openConfirm(item.id)"
+            class="bg-red-500 text-white px-3 py-1 rounded hover:scale-105 transition duration-300"
+          >
             Remove
           </button>
         </div>
+        <!-- CONFIRM DELETE MODAL -->
         <div v-if="showConfirm" class="fixed inset-0 bg-black/50 flex items-center justify-center">
           <div class="bg-white p-6 rounded-lg w-[300px] text-center">
             <p class="mb-4">Remove this course from cart?</p>
@@ -74,10 +84,17 @@ const cancelRemove = () => {
       </div>
 
       <!-- TOTAL -->
-      <div class="flex justify-end mt-[30px]">
-        <div class="bg-white p-[20px] rounded shadow w-[300px]">
-          <p class="text-[20px] font-semibold mb-[10px]">Total</p>
-          <p class="text-[24px] font-bold text-primary">${{ cartStore.totalPrice }}</p>
+      <div class="flex justify-end mt-[30px] mb-[30px]">
+        <div class="bg-white p-[20px] rounded shadow w-[300px] flex justify-between">
+          <div>
+            <p class="text-[20px] font-semibold mb-[10px]">Total</p>
+            <p class="text-[24px] font-bold text-primary">${{ cartStore.totalPrice }}</p>
+          </div>
+          <button
+            class="bg-primary text-white font-bold p-[20px] rounded-[10px] hover:scale-105 transition duration-300"
+          >
+            Pay
+          </button>
         </div>
       </div>
     </div>
