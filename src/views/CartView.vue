@@ -1,10 +1,19 @@
 <script setup>
 import { useCartStore } from '@/stores/cartStore'
 import { ref, computed } from 'vue'
+import { coursesRecommended } from '@/data/CourseDetail/RecommendedCourse'
 
 const cartStore = useCartStore()
 
-const cartItems = computed(() => cartStore.cart)
+const cartItems = computed(() => {
+  return cartStore.cart.map((cartItems) => {
+    const course = coursesRecommended.find((course) => course.id === cartItems.id)
+    return {
+      ...course,
+      quantity: cartItems.quantity,
+    }
+  })
+})
 const isEmpty = computed(() => cartItems.value.length === 0)
 
 const showConfirm = ref(false)
@@ -83,7 +92,7 @@ const decreaseCount = (id) => {
             </button>
           </div>
           <p class="text-primary font-bold text-[18px]">
-            {{ item.newPrice }}
+            ${{ Number(item.newPrice.replace('$', '')) * item.quantity }}
           </p>
 
           <button

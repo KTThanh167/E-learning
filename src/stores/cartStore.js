@@ -23,7 +23,10 @@ export const useCartStore = defineStore('cart', {
   actions: {
     addToCart(course) {
       if (!this.isInCart(course.id)) {
-        this.cart.push(course)
+        this.cart.push({
+          id: course.id,
+          quantity: 1,
+        })
         this.saveToLocalStorage()
       }
     },
