@@ -1,19 +1,10 @@
 <script setup>
 import { useCartStore } from '@/stores/cartStore'
 import { ref, computed } from 'vue'
-import { coursesRecommended } from '@/data/CourseDetail/RecommendedCourse'
 
 const cartStore = useCartStore()
 
-const cartItems = computed(() => {
-  return cartStore.cart.map((cartItems) => {
-    const course = coursesRecommended.find((course) => course.id === cartItems.id)
-    return {
-      ...course,
-      quantity: cartItems.quantity,
-    }
-  })
-})
+const cartItems = computed(() => cartStore.cartItems)
 const isEmpty = computed(() => cartItems.value.length === 0)
 
 const showConfirm = ref(false)
