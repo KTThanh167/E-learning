@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { coursesRecommended } from '@/data/CourseDetail/RecommendedCourse'
 
 export const useCartStore = defineStore('cart', {
   state: () => ({
@@ -6,7 +7,24 @@ export const useCartStore = defineStore('cart', {
   }),
 
   getters: {
-    totalItems: (state) => state.cart.length,
+    cartItems: (state) => {
+      return state.cart
+        .map((item) => {
+          const course = coursesRecommended.find((c) => c.id === item.id)
+
+          if (!course) return null
+
+          return {
+            ...course,
+            quantity: item.quantity,
+          }
+        })
+        .filter(Boolean)
+    },
+
+    totalItems: (state) => {
+      return state.cart.reduce((total, item) => total + item.quantity, 0)
+    },
 
     isInCart: (state) => {
       return (id) => state.cart.some((item) => item.id === id)
@@ -14,7 +32,10 @@ export const useCartStore = defineStore('cart', {
 
     totalPrice: (state) => {
       return state.cart.reduce((total, item) => {
-        const price = Number(item.newPrice.replace('$', ''))
+        const course = coursesRecommended.find((c) => c.id === item.id)
+        if (!course) return total
+
+        const price = Number(course.newPrice.replace('$', ''))
         return total + price * item.quantity
       }, 0)
     },

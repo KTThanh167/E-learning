@@ -22,7 +22,7 @@ export const coursesRecommended = [
     title: 'AWS Certified solutions Architect',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipising elit, sed do eiusmod tempor',
     userAvt: UserAvt,
-    userName: 'Lina',
+    userName: 'Jack',
     oldPrice: '$100',
     newPrice: '$60',
     quantity: 1,
