@@ -1,28 +1,49 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+import { message } from 'ant-design-vue'
+
+const WrongEmail = () => {
+  message.error('Tài khoản chưa tồn tại! Vui lòng đăng ký trước.')
+}
+
+const WrongPassword = () => {
+  message.error('Sai mật khẩu! Vui lòng kiểm tra lại.')
+}
+
+const success = () => {
+  message.success('Đăng nhập thành công!')
+}
+
 const router = useRouter()
-//Local storage
+
+//type cho user
+type User = {
+  email: string
+  password: string
+}
+
+//local storage
 const STORAGE_KEY = 'logins'
 
-const getLogins = () => {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY))
+const getLogins = (): User[] => {
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
   return Array.isArray(data) ? data : []
 }
 
-const email = ref('')
-const password = ref('')
-const logins = ref(getLogins())
-const rememberCheck = ref(false)
-const seePassword = ref(false)
+const email = ref<string>('')
+const password = ref<string>('')
+const logins = ref<User[]>(getLogins())
+const rememberCheck = ref<boolean>(false)
 
-const resetForm = () => {
+const resetForm = (): void => {
   email.value = ''
   password.value = ''
 }
-//Sự kiến ấn nút đăng nhập
-const handleLogin = () => {
+
+// Sự kiện đăng nhập
+const handleLogin = (): void => {
   const emailUser = email.value.trim()
   const passwordUser = password.value.trim()
 
@@ -31,28 +52,20 @@ const handleLogin = () => {
     return
   }
 
-  const user = logins.value.find((u) => u.email === emailUser)
+  const user = logins.value.find((u: User) => u.email === emailUser)
 
   if (!user) {
-    alert('Email không tồn tại')
+    WrongEmail()
     return
   }
 
   if (user.password !== passwordUser) {
-    alert('Sai mật khẩu')
+    WrongPassword()
     return
   }
-
-  router.push('/home')
+  success()
+  router.push('/')
   resetForm()
-}
-//Sự kiện ấn nút nhớ mật khẩu
-const handleRememberPass = () => {
-  rememberCheck.value = !rememberCheck.value
-}
-//Sự kiện hiển thị mật khẩu
-const handleSeePassword = () => {
-  seePassword.value = !seePassword.value
 }
 </script>
 
@@ -73,59 +86,55 @@ const handleSeePassword = () => {
         <p class="login__welcome">Welcome to lorem..!</p>
 
         <div class="login__navigation">
-          <router-link to="/login" class="login__nav-item login__nav-item--active"
-            >Login</router-link
-          >
-          <router-link to="/register" class="login__nav-item">Register</router-link>
+          <router-link to="/login" class="login__nav-item login__nav-item--active">
+            Login
+          </router-link>
+          <router-link to="/register" class="login__nav-item"> Register </router-link>
         </div>
 
-        <form class="login__form" @submit.prevent="handleLogin">
+        <!-- ✅ FORM ANT DESIGN nhưng vẫn dùng handleLogin -->
+        <a-form
+          :model="{ email, password, rememberCheck }"
+          layout="vertical"
+          class="login__form"
+          @finish="handleLogin"
+        >
           <p class="login__description">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
 
           <!-- Email -->
-          <div class="login__field">
-            <p class="login__label">Email</p>
-            <input
-              class="login__input"
-              type="email"
-              placeholder="Enter your Email"
-              autocomplete="username"
-              v-model="email"
-            />
-          </div>
+          <a-form-item
+            label="Email"
+            name="email"
+            :rules="[{ required: true, message: 'Vui lòng nhập email!' }]"
+          >
+            <a-input v-model:value="email" placeholder="Enter your Email" />
+          </a-form-item>
 
           <!-- Password -->
-          <div class="login__field login__field--password">
-            <p class="login__label">Password</p>
-            <input
-              class="login__input"
-              :type="seePassword ? 'text' : 'password'"
-              placeholder="Enter your Password"
-              autocomplete="current-password"
-              v-model="password"
-            />
-            <button class="login__toggle-password" type="button" @click="handleSeePassword">
-              <img src="../assets/img/Icon/invisible1.svg" alt="" />
-            </button>
-          </div>
+          <a-form-item
+            label="Password"
+            name="password"
+            :rules="[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]"
+          >
+            <a-input-password v-model:value="password" placeholder="Enter your Password" />
+          </a-form-item>
 
           <!-- Options -->
           <div class="login__options">
-            <div class="login__remember">
-              <input type="checkbox" v-model="rememberCheck" />
-              <button type="button" class="login__remember-btn" @click="handleRememberPass">
-                Remember me
-              </button>
-            </div>
+            <a-checkbox v-model:checked="rememberCheck"> Remember me </a-checkbox>
 
             <button class="login__forgot" type="button">Forgot Password?</button>
           </div>
 
           <!-- Submit -->
-          <button class="login__submit">Login</button>
-        </form>
+          <a-form-item>
+            <a-button type="primary" html-type="submit" class="w-full bg-[#49bbbd]">
+              Login
+            </a-button>
+          </a-form-item>
+        </a-form>
       </div>
     </div>
   </div>
