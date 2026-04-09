@@ -36,7 +36,7 @@ const handleRegister = async () => {
     await api.post('/users', {
       email: formState.email,
       name: formState.name,
-      password: formState.password,
+      password: String(formState.password),
     })
 
     message.success('Đăng ký thành công!')
