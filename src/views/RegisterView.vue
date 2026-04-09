@@ -2,10 +2,16 @@
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { message } from 'ant-design-vue'
-import type { Rule } from 'ant-design-vue/es/form'
+import api from '@/utils/axios-req'
+
+interface User {
+  id: string
+  email: string
+  name: string
+  password: string
+}
 
 const router = useRouter()
-const STORAGE_KEY = 'logins'
 
 // Gom các trường vào 1 object
 const formState = reactive({
@@ -14,36 +20,30 @@ const formState = reactive({
   password: '',
 })
 
-// Lấy dữ liệu từ LocalStorage
-const getStoredLogins = (): { email: string; name: string; password: string }[] => {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-  return Array.isArray(data) ? data : []
-}
-
-// Validator kiểm tra email tồn tại
-const checkEmailExist = async (_rule: Rule, value: string) => {
-  const currentLogins = getStoredLogins()
-  if (currentLogins.some((user) => user.email === value)) {
-    return Promise.reject('Email này đã được đăng ký!')
-  }
-  return Promise.resolve()
-}
-
 const handleRegister = async () => {
   try {
-    const currentLogins = getStoredLogins()
+    // 1. Kiểm tra xem email đã tồn tại trên Server chưa
+    const existingUsers: User[] = await api.get('/users', {
+      params: { email: formState.email },
+    })
 
-    // Thêm user mới
-    currentLogins.push({ ...formState })
+    if (existingUsers.length > 0) {
+      message.error('Email này đã được đăng ký!')
+      return
+    }
 
-    // Lưu lại
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(currentLogins))
+    // 2. Nếu chưa có, tiến hành tạo mới (POST)
+    await api.post('/users', {
+      email: formState.email,
+      name: formState.name,
+      password: formState.password,
+    })
 
     message.success('Đăng ký thành công!')
     router.push('/login')
   } catch (error) {
-    console.error('Error during registration:', error)
-    message.error('Có lỗi xảy ra, vui lòng thử lại!')
+    console.error('Lỗi khi đăng ký:', error)
+    message.error('Lỗi hệ thống, vui lòng thử lại sau!')
   }
 }
 </script>
@@ -103,7 +103,6 @@ const handleRegister = async () => {
             :rules="[
               { required: true, message: 'Vui lòng nhập email!' },
               { type: 'email', message: 'Email không đúng định dạng!' },
-              { validator: checkEmailExist },
             ]"
           >
             <a-input

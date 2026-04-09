@@ -2,9 +2,16 @@
 import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { message } from 'ant-design-vue'
+import api from '@/utils/axios-req'
+
+interface User {
+  id: number
+  name: string
+  email: string
+  password: string
+}
 
 const router = useRouter()
-const STORAGE_KEY = 'logins'
 
 const formState = reactive({
   email: '',
@@ -12,35 +19,35 @@ const formState = reactive({
   remember: false,
 })
 
-// Type cho User
-interface User {
-  email: string
-  password: string
-}
+const handleLogin = async () => {
+  try {
+    // Gọi API tìm user có email và password khớp
+    // JSON Server cho phép lọc bằng cách truyền params
+    const users: User[] = await api.get('/users', {
+      params: {
+        email: formState.email,
+        password: formState.password,
+      },
+    })
 
-const getStoredLogins = (): User[] => {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-  return Array.isArray(data) ? data : []
-}
+    if (users.length > 0) {
+      // Đăng nhập thành công
+      const user = users[0]
 
-const handleLogin = (): void => {
-  const logins = getStoredLogins()
+      // Giả lập lưu Token (vì json-server không tự tạo token như thật)
+      localStorage.setItem('access_token', 'mock_token_for_' + user.id)
+      localStorage.setItem('user_info', JSON.stringify(user))
 
-  // Tìm user trong mảng logins
-  const user = logins.find((u) => u.email === formState.email.trim())
-
-  if (!user) {
-    message.error('Tài khoản chưa tồn tại! Vui lòng đăng ký trước.')
-    return
+      message.success(`Chào mừng ${user.name} quay trở lại!`)
+      router.push('/')
+    } else {
+      // Không tìm thấy user khớp cả email và pass
+      message.error('Email hoặc mật khẩu không chính xác!')
+    }
+  } catch (error) {
+    console.error('Lỗi khi đăng nhập:', error)
+    message.error('Không thể kết nối đến máy chủ!')
   }
-
-  if (user.password !== formState.password.trim()) {
-    message.error('Sai mật khẩu! Vui lòng kiểm tra lại.')
-    return
-  }
-
-  message.success('Đăng nhập thành công!')
-  router.push('/') // Chuyển hướng về trang chủ
 }
 </script>
 
