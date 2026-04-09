@@ -7,10 +7,28 @@
       "password": "Thanh123"
     },
     {
-      "email": "thanh123@gmail.com",
-      "name": "thanh",
+      "id": "2",
+      "email": "thanh1@gmail.com",
+      "name": "Thành",
+      "password": "Thanh123"
+    },
+    {
+      "email": "abc@gmail.com",
+      "name": "abc",
+      "password": "abc123",
+      "id": "Z-ubcgfDb7s"
+    },
+    {
+      "email": "abcd@gmail.com",
+      "name": "abcd",
       "password": "123123",
-      "id": "cp3WSeIubOQ"
+      "id": "zR-7hVLAGxc"
+    },
+    {
+      "id": "2aab",
+      "email": "abcde@gmail.com",
+      "name": "123123",
+      "password": "123123"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

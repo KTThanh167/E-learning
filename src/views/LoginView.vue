@@ -5,7 +5,7 @@ import { message } from 'ant-design-vue'
 import api from '@/utils/axios-req'
 
 interface User {
-  id: number
+  id: string
   name: string
   email: string
   password: string
@@ -21,27 +21,30 @@ const formState = reactive({
 
 const handleLogin = async () => {
   try {
-    // Gọi API tìm user có email và password khớp
-    // JSON Server cho phép lọc bằng cách truyền params
+    // Gọi API tìm user có email khớp
     const users: User[] = await api.get('/users', {
       params: {
-        email: formState.email,
-        password: formState.password,
+        email: formState.email.trim(),
       },
     })
 
     if (users.length > 0) {
-      // Đăng nhập thành công
       const user = users[0]
+      // Kiểm tra mật khẩu
+      if (user.password === formState.password.trim()) {
+        // Đăng nhập thành công
+        // Giả lập lưu Token (vì json-server không tự tạo token như thật)
+        localStorage.setItem('access_token', 'mock_token_for_' + user.id)
+        localStorage.setItem('user_info', JSON.stringify(user))
 
-      // Giả lập lưu Token (vì json-server không tự tạo token như thật)
-      localStorage.setItem('access_token', 'mock_token_for_' + user.id)
-      localStorage.setItem('user_info', JSON.stringify(user))
-
-      message.success(`Chào mừng ${user.name} quay trở lại!`)
-      router.push('/')
+        message.success(`Chào mừng ${user.name} quay trở lại!`)
+        router.push('/')
+      } else {
+        // Mật khẩu không khớp
+        message.error('Email hoặc mật khẩu không chính xác!')
+      }
     } else {
-      // Không tìm thấy user khớp cả email và pass
+      // Không tìm thấy user với email này
       message.error('Email hoặc mật khẩu không chính xác!')
     }
   } catch (error) {
