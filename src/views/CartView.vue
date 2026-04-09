@@ -18,7 +18,6 @@ const openConfirmDelete = (id) => {
     okType: 'danger',
     cancelText: 'Hủy',
     onOk() {
-      // Gọi trực tiếp action xóa từ store
       cartStore.removeFromCart(id)
     },
     onCancel() {
@@ -87,7 +86,9 @@ const decreaseCount = (id) => {
             ${{ (Number(item.newPrice.replace('$', '')) * item.quantity).toFixed(2) }}
           </p>
 
-          <a-button danger type="primary" @click="openConfirmDelete(item.id)"> Delete </a-button>
+          <a-button danger type="primary" @click="openConfirmDelete(item.id)" class="font-semibold">
+            DELETE
+          </a-button>
         </div>
       </div>
 
@@ -100,9 +101,9 @@ const decreaseCount = (id) => {
           <el-button
             type="primary"
             size="large"
-            class="font-bold hover:scale-105 transition duration-300"
+            class="font-semibold text-[20px] hover:scale-105 transition duration-300"
           >
-            Pay
+            PAY
           </el-button>
         </div>
       </div>

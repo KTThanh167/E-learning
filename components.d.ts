@@ -13,10 +13,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
     ACheckbox: typeof import('ant-design-vue/es')['Checkbox']
+    ACol: typeof import('ant-design-vue/es')['Col']
     AForm: typeof import('ant-design-vue/es')['Form']
     AFormItem: typeof import('ant-design-vue/es')['FormItem']
     AInput: typeof import('ant-design-vue/es')['Input']
     AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
+    ARow: typeof import('ant-design-vue/es')['Row']
     BlogCategoryCard: typeof import('./src/components/Home/BlogCategoryCard.vue')['default']
     CategoryCard: typeof import('./src/components/Course/CategoryCard.vue')['default']
     ClassroomPreview: typeof import('./src/components/CourseDetail/ClassroomPreview.vue')['default']

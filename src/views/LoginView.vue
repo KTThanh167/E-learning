@@ -1,306 +1,143 @@
-<script setup lang="ts">
-import { ref } from 'vue'
+<script lang="ts" setup>
+import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
-
 import { message } from 'ant-design-vue'
 
-const WrongEmail = () => {
-  message.error('Tài khoản chưa tồn tại! Vui lòng đăng ký trước.')
-}
-
-const WrongPassword = () => {
-  message.error('Sai mật khẩu! Vui lòng kiểm tra lại.')
-}
-
-const success = () => {
-  message.success('Đăng nhập thành công!')
-}
-
 const router = useRouter()
+const STORAGE_KEY = 'logins'
 
-//type cho user
-type User = {
+const formState = reactive({
+  email: '',
+  password: '',
+  remember: false,
+})
+
+// Type cho User
+interface User {
   email: string
   password: string
 }
 
-//local storage
-const STORAGE_KEY = 'logins'
-
-const getLogins = (): User[] => {
+const getStoredLogins = (): User[] => {
   const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
   return Array.isArray(data) ? data : []
 }
 
-const email = ref<string>('')
-const password = ref<string>('')
-const logins = ref<User[]>(getLogins())
-const rememberCheck = ref<boolean>(false)
-
-const resetForm = (): void => {
-  email.value = ''
-  password.value = ''
-}
-
-// Sự kiện đăng nhập
 const handleLogin = (): void => {
-  const emailUser = email.value.trim()
-  const passwordUser = password.value.trim()
+  const logins = getStoredLogins()
 
-  if (!emailUser || !passwordUser) {
-    alert('Hãy nhập đầy đủ thông tin')
-    return
-  }
-
-  const user = logins.value.find((u: User) => u.email === emailUser)
+  // Tìm user trong mảng logins
+  const user = logins.find((u) => u.email === formState.email.trim())
 
   if (!user) {
-    WrongEmail()
+    message.error('Tài khoản chưa tồn tại! Vui lòng đăng ký trước.')
     return
   }
 
-  if (user.password !== passwordUser) {
-    WrongPassword()
+  if (user.password !== formState.password.trim()) {
+    message.error('Sai mật khẩu! Vui lòng kiểm tra lại.')
     return
   }
-  success()
-  router.push('/')
-  resetForm()
+
+  message.success('Đăng nhập thành công!')
+  router.push('/') // Chuyển hướng về trang chủ
 }
 </script>
 
 <template>
-  <div class="login">
-    <div class="login__container">
-      <!-- Left -->
-      <div class="login__left">
-        <img class="login__image" src="../assets/img/Login/banner.png" alt="" />
-        <div class="login__left-text">
-          <p class="login__title">Lorem Ipsum is simply</p>
-          <p class="login__subtitle">Lorem Ipsum is simply</p>
+  <div class="min-h-screen bg-gray-50 flex items-center justify-center p-4 font-['Poppins']">
+    <a-row
+      :gutter="[0, 0]"
+      align="middle"
+      class="w-full max-w-6xl bg-white rounded-[30px] overflow-hidden shadow-2xl"
+    >
+      <a-col :xs="0" :md="12" class="relative h-[85vh]">
+        <img
+          src="../assets/img/Login/banner.png"
+          alt="login-banner"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute bottom-16 left-10 text-white drop-shadow-lg">
+          <h1 class="text-4xl font-bold mb-2">Lorem Ipsum is simply</h1>
+          <p class="text-xl opacity-90">Lorem Ipsum is simply dummy text</p>
         </div>
-      </div>
+      </a-col>
 
-      <!-- Right -->
-      <div class="login__right">
-        <p class="login__welcome">Welcome to lorem..!</p>
+      <a-col :xs="24" :md="12" class="p-8 lg:p-16">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-6">Welcome to lorem..!</h2>
 
-        <div class="login__navigation">
-          <router-link to="/login" class="login__nav-item login__nav-item--active">
-            Login
-          </router-link>
-          <router-link to="/register" class="login__nav-item"> Register </router-link>
+          <div class="inline-flex bg-teal-500/20 p-1.5 rounded-full">
+            <router-link
+              to="/login"
+              class="px-10 py-2 rounded-full bg-[#49bbbd] text-white shadow-md transition-all"
+            >
+              Login
+            </router-link>
+            <router-link
+              to="/register"
+              class="px-10 py-2 rounded-full text-gray-500 transition-all hover:text-teal-600"
+            >
+              Register
+            </router-link>
+          </div>
         </div>
 
-        <!-- ✅ FORM ANT DESIGN nhưng vẫn dùng handleLogin -->
-        <a-form
-          :model="{ email, password, rememberCheck }"
-          layout="vertical"
-          class="login__form"
-          @finish="handleLogin"
-        >
-          <p class="login__description">
+        <a-form :model="formState" layout="vertical" @finish="handleLogin" class="max-w-md mx-auto">
+          <p class="text-gray-500 mb-8 leading-relaxed">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
 
-          <!-- Email -->
           <a-form-item
-            label="Email"
+            label="Email Address"
             name="email"
-            :rules="[{ required: true, message: 'Vui lòng nhập email!' }]"
+            :rules="[
+              { required: true, message: 'Vui lòng nhập email!' },
+              { type: 'email', message: 'Email không đúng định dạng!' },
+            ]"
           >
-            <a-input v-model:value="email" placeholder="Enter your Email" />
+            <a-input
+              v-model:value="formState.email"
+              placeholder="Enter your Email"
+              class="!rounded-full !py-3 !px-6 !border-[#49bbbd]"
+            />
           </a-form-item>
 
-          <!-- Password -->
           <a-form-item
             label="Password"
             name="password"
             :rules="[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]"
           >
-            <a-input-password v-model:value="password" placeholder="Enter your Password" />
+            <a-input-password
+              v-model:value="formState.password"
+              placeholder="Enter your Password"
+              class="!rounded-full !py-3 !px-6 !border-[#49bbbd]"
+            />
           </a-form-item>
 
-          <!-- Options -->
-          <div class="login__options">
-            <a-checkbox v-model:checked="rememberCheck"> Remember me </a-checkbox>
-
-            <button class="login__forgot" type="button">Forgot Password?</button>
+          <div class="flex items-center justify-between mb-8">
+            <a-checkbox v-model:checked="formState.remember" class="text-gray-600">
+              Remember me
+            </a-checkbox>
+            <button
+              type="button"
+              class="text-gray-500 hover:text-[#49bbbd] text-sm transition-colors"
+            >
+              Forgot Password?
+            </button>
           </div>
 
-          <!-- Submit -->
-          <a-form-item>
-            <a-button type="primary" html-type="submit" class="w-full bg-[#49bbbd]">
+          <div class="flex justify-center md:justify-end">
+            <a-button
+              type="primary"
+              html-type="submit"
+              class="!h-auto !py-3 !px-16 !rounded-full !bg-[#49bbbd] !border-none hover:!bg-[#3aa1a2] !text-base font-medium transition-all w-full md:w-auto"
+            >
               Login
             </a-button>
-          </a-form-item>
+          </div>
         </a-form>
-      </div>
-    </div>
+      </a-col>
+    </a-row>
   </div>
 </template>
-
-<style scoped>
-.login {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.login__container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 18px;
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.login__left {
-  display: none;
-  position: relative;
-}
-
-.login__image {
-  width: 100%;
-  height: 90vh;
-  object-fit: cover;
-  border-radius: 29px;
-}
-
-.login__left-text {
-  position: absolute;
-  bottom: 90px;
-  left: 70px;
-  color: white;
-}
-
-.login__title {
-  font-size: 37px;
-  font-weight: 700;
-}
-
-.login__subtitle {
-  font-size: 25px;
-}
-
-.login__right {
-  display: flex;
-  flex-direction: column;
-}
-
-.login__welcome {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.login__navigation {
-  display: flex;
-  background: rgba(73, 187, 189, 0.6);
-  border-radius: 33px;
-  padding: 10px;
-  justify-content: space-around;
-}
-
-.login__nav-item {
-  text-decoration: none;
-  color: white;
-  padding: 8px 45px;
-  border-radius: 33px;
-}
-
-.login__nav-item--active {
-  background: rgba(73, 187, 189, 1);
-}
-
-.login__form {
-  margin-top: 52px;
-  display: flex;
-  flex-direction: column;
-}
-
-.login__description {
-  margin-bottom: 42px;
-  color: rgba(105, 105, 132, 1);
-}
-
-.login__field {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.login__field--password {
-  position: relative;
-  margin-top: 30px;
-}
-
-.login__label {
-  font-size: 16px;
-}
-
-.login__input {
-  padding: 15px 23px;
-  border-radius: 40px;
-  border: 1px solid rgba(73, 187, 189, 1);
-}
-
-.login__toggle-password {
-  position: absolute;
-  right: 20px;
-  top: 60%;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.login__options {
-  display: flex;
-  justify-content: space-between;
-  margin: 22px 0 62px;
-}
-
-.login__remember {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.login__remember-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.login__forgot {
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.login__submit {
-  align-self: flex-end;
-  padding: 13px 84px;
-  background: #49bbbd;
-  color: white;
-  border: none;
-  border-radius: 36px;
-  cursor: pointer;
-}
-
-.login__submit:hover {
-  background: #3aa1a2;
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-  .login__container {
-    grid-template-columns: 1fr 1fr;
-    gap: 111px;
-  }
-
-  .login__left {
-    display: block;
-  }
-}
-</style>
